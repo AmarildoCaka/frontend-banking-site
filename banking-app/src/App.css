@@ -1,0 +1,2110 @@
+/* Root styles: */
+
+:root {
+
+  --background-color: white;
+  --text-color: black;
+
+}
+
+/* Light & dark mode rules: */
+
+.light {
+
+  /* New: */
+
+  --carousel-card-bg: white;
+  --carousel-card-text-color: black;
+  --card-wrapper-bg: white;
+  --more-info-card-text-color: black;
+  --transaction-pop-up-bg: white;
+  --transaction-pop-up-text-color: black;
+  --card-linking-element-bg: white;
+  --card-linking-element-text-color: black;
+  --transaction-element-bg: white;
+  --transaction-element-text-color: black;
+  --loan-plan-element-bg: white;
+  --loan-plan-text-color: black;
+  --balances-element-bg: white;
+  --balances-element-text-color: black;
+  --footer-division-line-color: black;
+  --footer-text-color: black;
+  --values-card: white;
+  --values-card-border-color: black;
+  --value-card-text: black;
+  --team-member-card-divider-color: black;
+  --team-member-card-text-color: black;
+  --team-memeber-card-wrapper-bg: white;
+  --contact-us-main-wrapper-bg: white;
+  --rating-form-bg: white;
+  --rating-form-text-color: black;
+  --rating-form-submit-btn-bg: #6366F1;
+  --rating-form-divider-color: black;
+  --rating-form-info-divider-bg: black;
+  --rating-form-info-btn-color: black;
+  --rating-first-name-form-bg: white;
+  --rating-first-name-form-color: white;
+  --rating-first-name-form-color: black;
+  --first-name-copy-btn-color: black;
+  --first-name-erase-btn-color: black;
+  --rating-last-name-form-bg: white;
+  --rating-last-name-form-color: black;
+  --last-name-copy-btn-color: black;
+  --last-name-erase-btn-color: black;
+  --rating-email-form-bg: white;
+  --rating-email-form-color: black;
+  --email-copy-btn-bg: black;
+  --email-erase-btn-bg: black;
+  --rating-description-form-bg: white;
+  --rating-description-form-color: black;
+  --description-copy-btn-color: black;
+  --description-erase-btn-color: black;
+  --rating-main-wrapper-bg: white;
+  --rating-timestamps-btn: #6366F1;
+  --rating-sub-wrapper-bg: white;
+  --rating-msg-footer-inner-wrapper-border: black;
+  --rating-msg-header-wrapper-border: black;
+  --rating-body-msg-edit-form-bg: white;
+  --rating-body-msg-edit-form-color: black;
+  --rating-body-msg-edit-wrapper-bg: white;
+  --rating-msg-alert-wrapper-bg: white;
+  --page-not-found-wrapper-bg: linear-gradient(to bottom, #E0E7FF, #C7D2FE, #A5B4FC);
+  --page-not-found-inner-wrapper-bg: #FFFFFF;
+  --page-not-found-text-color: linear-gradient(to right, #4F46E5, #4338CA, #3730A3);
+  --page-not-found-btn-bg: #6366F1;
+  --settings-wrapper-bg: white;
+  --settings-options-bg: white;
+  --settings-selected-option-bg: white;
+  --settings-option-text-color: black;
+  --danger-zone-setting-text-color: black;
+  --account-setting-wrapper-bg: white;
+  --account-setting-text-color: black;
+  --account-setting-text-color: black;
+  --account-settings-divider-border: black;
+  --security-settings-text-color: black;
+  --security-settings-wrapper-bg: white;
+  --notification-settings-text-color: black;
+  --main-dashboard-wrapper-bg: #1e3a8a;
+  --main-dashboard-content-wrapper-bg: #f3f4f6;
+  --main-dashboard-text-color: black;
+  --faq-wrapper-bg: white;
+  --faq-text-color: black;
+  --faq-exit-btn-color: black;
+  --empty-loan-history-wrapper-bg: white;
+  --empty-loan-history-text-color: #4B5563;
+  --empty-loan-history-sub-text-color: #6B7280;
+  --loan-totals-element-bg: white;
+  --loan-totals-header-color: #6B7280;
+  --loan-totals-text-color: #4338CA;
+  --loan-element-bg: white;
+  --loan-element-number-color: #374151;
+  --loan-propearty-color: #6B7280;
+  --loan-data-color: #4338CA;
+  --loan-first-form-text-color: black;
+  --loan-form-bg: white;
+  --first-name-label-color: black;
+  --loan-first-name-form-bg: white;
+  --loan-first-name-copy-btn-color: black;
+  --loan-first-name-erase-btn-color: black;
+  --loan-last-name-form-bg: white;
+  --loan-last-name-copy-btn-color: black;
+  --loan-last-name-erase-btn-color: black;
+  --last-name-label-color: black;
+  --job-title-label-color: black;
+  --loan-job-title-form-bg: white;
+  --loan-job-title-copy-btn-color: black;
+  --loan-job-title-erase-btn-color: black;
+  --loan-monthly-income-label-color: black;
+  --loan-monthly-income-form-bg: white;
+  --loan-monthly-income-copy-btn-color: black;
+  --loan-monthly-income-erase-btn-color: black;
+  --loan-first-form-btn-bg: #6366F1;
+  --loan-first-form-divider-color: black;
+  --loan-second-form-text-color: black;
+  --loan-income-currency-form-bg: white;
+
+  /* Old: */
+
+  --background-gradient: linear-gradient(to right, #818cf8, #6366f1, #4338ca);
+  --dark-tone-sectin-bg: linear-gradient(to bottom right, #dbeafe, #c7d2fe);
+  --light-tone-section-bg: linear-gradient(to bottom right, #eff6ff, #e0e7ff);
+  --text-color: white;
+  --carousel-arrow-btn: black;
+  --hero-text: black;
+  --second-section-text: black;
+  --carousel-btn-text-color: white;
+  --carousel-btn-bg-color: #6a6cf2;
+  --carousel-btn-border: #6a6cf2;
+  --popup-wrapper-bg: white;
+  --popup-header-text-color: black;
+  --popup-divider-color: black;
+  --popup-text-color: black;
+  --popup-card-count-text-color: #6366F1;
+  --transition: 0.3s ease, transform 0.2s ease;
+  --third-section-bg: linear-gradient(to bottom right, #dbeafe, #c7d2fe);
+  --third-section-text: black;
+  --card-wrapper-border: #6a6cf2;
+  --card-icon-color: #6a6cf2;
+  --fourth-section-bg: linear-gradient(to bottom right, #dbeafe, #c7d2fe);
+  --card-linking-title-color: black;
+  --card-linking-description: black;
+  --link-card-btn-bg: #6a6cf2;
+  --link-card-btn-text: white;
+  --fifth-section-bg: linear-gradient(to bottom right, #eff6ff, #e0e7ff);
+  --balances-title-text: black;
+  --balances-description-text: black;
+  --balances-start-btn-bg: #6a6cf2;
+  --sixth-section-bg: linear-gradient(to bottom right, #dbeafe, #c7d2fe);
+  --transaction-title-text: black;
+  --transaction-description: black;
+  --transaction-start-btn-bg: #6a6cf2;
+  --transaction-icon: #6a6cf2;
+  --transaction-inner-icon-color: white;
+  --transaction-start-btn-text: white;
+  --transaction-reminder-section-bg: #e0e7ff;
+  --transaction-reminder-text-color: black;
+  --transaction-reminder-border: #818cf8;
+  --seventh-section-bg: linear-gradient(to bottom right, #eff6ff, #e0e7ff);
+  --loan-plan-title-text: black;
+  --loan-plan-description-text: black;
+  --loan-plan-icon: #6a6cf2;
+  --loan-plan-inner-icon-color: white;
+  --loan-plan-btn-bg: #6a6cf2;
+  --loan-plan-btn-text: white;
+  --footer-section-bg: #4F46E5;
+  --footer-text-color: black;
+  --footer-bottom-line-color: black;
+  --footer-tooltip-text-color: black;
+  --about-main-wrapper-bg: white;
+  --about-text: black;
+  --values-card-btn-bg: #6366F1;
+  --team-header-text: black;
+  --team-header-subtext: black;
+  --division-lines: black;
+  --video-main-wrapper-bg: linear-gradient(to bottom right, #eff6ff, #e0e7ff);
+  --video-header-text: black;
+  --video-description-text: black;
+  --video-link-text: #6366F1;
+  --contact-us-main-wrapper: white;
+  --contact-us-header-text: black;
+  --contact-us-icon-color: black;
+  --contact-us-text-color: black;
+  --contact-us-map-borders: black;
+  --contact-us-division-color: black;
+  --rating-header-text-color: black;
+  --rating-description-text-color: black;
+  --rating-text-color: black;
+  --rating-empty-header-color: black;
+  --rating-empty-description-color: black;
+  --rating-total-text-color: black;
+  --rating-msg-wrapper-bg: white;
+  --rating-msg-wrapper-border-color: #e5e7eb;
+  --rating-msg-header-wrapper-bg: #f8fafc;
+  --rating-msg-user-icon-color: #6b7280;
+  --rating-msg-info-color: black;
+  --rating-msg-division-color: black;
+  --rating-msg-copy-btn: black;
+  --rating-msg-delete-btn: black;
+  --rating-msg-body-icon-color: #6b7280;
+  --rating-msg-body-text-color: #6b7280;
+  --rating-msg-body-btn: black;
+  --rating-msg-body-message-data-color: #374151;
+  --rating-msg-body-rated-text-color: black;
+  --rating-msg-body-stars-color: #374151;
+  --rating-msg-footer-wrapper-bg: white;
+  --rating-msg-footer-icon-color: black;
+  --rating-msg-footer-text-color: black;
+  --rating-msg-footer-copy-btn: black;
+  --exit-btn-color: black;
+  --rating-body-msg-edit-header-color: black;
+  --rating-body-msg-edit-border: black;
+  --rating-msg-alert-description-color: black;
+  --rating-msg-alert-divider: black;
+  --rating-timestamps-wrapper-bg: white;
+  --rating-timestamps-header-color: black;
+  --timestamps-num-text-color: black;
+  --timestamp-table-header-bg: #F3F4F6;
+  --timestamp-table-body-bg: #F9FAFB;
+  --timestamp-table-header-text-color: black;
+  --timestamp-table-body-text-color: black;
+  --timestamp-table-copy-btn: black;
+  --timestamp-table-delete-btn: black;
+
+}
+
+.dark {
+
+  /* New: */
+
+  --dark-tone-sectin-bg: #0f172a;
+  --background-gradient: #1e293b;
+  --light-tone-section-bg: #0f172a;
+  --carousel-btn-bg-color: #334155;
+  --carousel-card-bg: #1e293b;
+  --carousel-card-text-color: white;
+  --popup-wrapper-bg: #1e293b;
+  --third-section-bg: #0f172a;
+  --card-wrapper-bg: #1e293b;
+  --card-wrapper-border: #1e293b;
+  --more-info-card-text-color: white;
+  --video-main-wrapper-bg: #0f172a;
+  --fourth-section-bg: #0f172a;
+  --link-card-btn-bg: #334155;
+  --fifth-section-bg: #0f172a;
+  --balances-element-bg: #1e293b;
+  --balances-start-btn-bg: #334155;
+  --transaction-pop-up-bg: #1e293b;
+  --transaction-pop-up-text-color: white;
+  --sixth-section-bg: #0f172a;
+  --transaction-icon: #0f172a;
+  --card-linking-element-bg: #1e293b;
+  --card-linking-element-text-color: white;
+  --transaction-element-bg: #1e293b;
+  --transaction-element-text-color: white;
+  --transaction-start-btn-bg: #334155;
+  --seventh-section-bg: #0f172a;
+  --loan-plan-element-bg: #1e293b;
+  --loan-plan-icon: #0f172a;
+  --loan-plan-btn-bg: #334155;
+  --loan-plan-text-color: white;
+  --footer-section-bg: #1e293b;
+  --balances-element-text-color: white;
+  --about-main-wrapper-bg: #0f172a;
+  --footer-division-line-color: white;
+  --footer-text-color: white;
+  --values-card: #1e293b;
+  --values-card-border-color: #1e293b;
+  --value-card-text: white;
+  --values-card-btn-bg: #334155;
+  --values-card-btn-border-color: #334155;
+  --team-member-card-divider-color: white;
+  --team-member-card-text-color: white;
+  --team-memeber-card-wrapper-bg: #1e293b;
+  --team-memeber-card-wrapper-border: #1e293b;
+  --contact-us-main-wrapper-bg: #0f172a;
+  --rating-form-bg: #1e293b;
+  --rating-form-text-color: white;
+  --rating-form-submit-btn-bg: #334155;
+  --rating-form-divider-color: white;
+  --rating-form-info-divider-bg: white;
+  --rating-form-info-btn-color: white;
+  --rating-first-name-form-bg: #334155;
+  --rating-first-name-form-color: white;
+  --first-name-copy-btn-color: white;
+  --first-name-erase-btn-color: white;
+  --rating-last-name-form-bg: #334155;
+  --rating-last-name-form-color: white;
+  --last-name-copy-btn-color: white;
+  --last-name-erase-btn-color: white;
+  --rating-email-form-bg: #334155;
+  --rating-email-form-color: white;
+  --email-copy-btn-bg: white;
+  --email-erase-btn-bg: white;
+  --rating-description-form-bg: #334155;
+  --rating-description-form-color: white;
+  --description-copy-btn-color: white;
+  --description-erase-btn-color: white;
+  --rating-main-wrapper-bg: #0f172a;
+  --rating-timestamps-btn: #334155;
+  --rating-sub-wrapper-bg: #1e293b;
+  --rating-msg-wrapper-bg: #1e293b;
+  --rating-msg-header-wrapper-bg: #1e293b;
+  --rating-msg-header-wrapper-border: white;
+  --rating-msg-footer-wrapper-bg: #1e293b;
+  --rating-msg-footer-inner-wrapper-border: white;
+  --rating-body-msg-edit-form-bg: #334155;
+  --rating-body-msg-edit-form-color: white;
+  --rating-body-msg-edit-wrapper-bg: #1e293b;
+  --rating-msg-alert-wrapper-bg: #1e293b;
+  --page-not-found-wrapper-bg: #0f172a;
+  --page-not-found-inner-wrapper-bg: #1e293b;
+  --page-not-found-text-color: white;
+  --page-not-found-btn-bg: #334155;
+  --settings-wrapper-bg: #0f172a;
+  --settings-options-bg: #1e293b;
+  --settings-selected-option-bg: #1e293b;
+  --settings-option-text-color: white;
+  --danger-zone-setting-text-color: white;
+  --account-setting-wrapper-bg: #334155;
+  --account-setting-text-color: white;
+  --account-settings-divider-border: white;
+  --security-settings-text-color: white;
+  --security-settings-wrapper-bg: #334155;
+  --notification-settings-text-color: white;
+  --main-dashboard-wrapper-bg: #1e293b;
+  --main-dashboard-content-wrapper-bg: #0f172a;
+  --main-dashboard-text-color: white;
+  --faq-wrapper-bg: #1e293b;
+  --faq-text-color: white;
+  --faq-exit-btn-color: white;
+  --empty-loan-history-wrapper-bg: #1e293b;
+  --empty-loan-history-text-color: white;
+  --empty-loan-history-sub-text-color: white;
+  --loan-totals-element-bg: #1e293b;
+  --loan-totals-header-color: white;
+  --loan-totals-text-color: white;
+  --loan-element-bg: #1e293b;
+  --loan-element-number-color: white;
+  --loan-propearty-color: white;
+  --loan-data-color: white;
+  --loan-first-form-text-color: white;
+  --loan-form-bg: #1e293b;
+  --first-name-label-color: white;
+  --loan-first-name-form-bg: #334155;
+  --loan-first-name-copy-btn-color: white;
+  --loan-first-name-erase-btn-color: white;
+  --loan-last-name-form-bg: #334155;
+  --loan-last-name-copy-btn-color: white;
+  --loan-last-name-erase-btn-color: white;
+  --last-name-label-color: white;
+  --job-title-label-color: white;
+  --loan-job-title-form-bg: #334155;
+  --loan-job-title-copy-btn-color: white;
+  --loan-job-title-erase-btn-color: white;
+  --loan-monthly-income-label-color: white;
+  --loan-monthly-income-form-bg: #334155;
+  --loan-monthly-income-copy-btn-color: white;
+  --loan-monthly-income-erase-btn-color: white;
+  --loan-first-form-btn-bg: #334155;
+  --loan-first-form-divider-color: white;
+  --loan-second-form-text-color: white;
+  --loan-income-currency-form-bg: #334155;
+
+  /* Old: */
+  
+  --hero-text: white;
+  --carousel-arrow-btn: white;
+  --second-section-text: white;
+  --carousel-btn-text-color: white;
+  --carousel-btn-border: black;
+  --popup-header-text-color: white;
+  --popup-divider-color: black;
+  --popup-text-color: white;
+  --popup-card-count-text-color: white;
+  --text-color: white;
+  --third-section-text: white;
+  --card-icon-color: white;
+  --card-linking-title-color: white;
+  --card-linking-description: white;
+  --link-card-btn-text: white;
+  --balances-title-text: white;
+  --balances-description-text: white;
+  --transaction-title-text: white;
+  --transaction-description: white;
+  --transaction-start-btn-text: white;
+  --transaction-inner-icon-color: white;
+  --transaction-reminder-section-bg: #424856;
+  --transaction-reminder-text-color: white;
+  --loan-plan-title-text: white;
+  --loan-plan-description-text: white;
+  --loan-plan-inner-icon-color: white;
+  --loan-plan-btn-text: white;
+  --footer-text-color: white;
+  --footer-bottom-line-color: white;
+  --footer-tooltip-text-color: white;
+  --about-text: white;
+  --team-header-text: white;
+  --team-header-subtext: white;
+  --division-lines: white;
+  --video-header-text: white;
+  --video-description-text: white;
+  --video-link-text: #6366F1;
+  --contact-us-header-text: white;
+  --contact-us-icon-color: white;
+  --contact-us-text-color: white;
+  --contact-us-map-borders: white;
+  --contact-us-division-color: white;
+  --rating-header-text-color: white;
+  --rating-description-text-color: white;
+  --rating-text-color: white;
+  --rating-empty-header-color: white;
+  --rating-empty-description-color: white;
+  --rating-total-text-color: white;
+  --rating-msg-user-icon-color: white;
+  --rating-msg-info-color: white;
+  --rating-msg-division-color: white;
+  --rating-msg-copy-btn: white;
+  --rating-msg-delete-btn: white;
+  --rating-msg-body-icon-color: white;
+  --rating-msg-body-text-color: white;
+  --rating-msg-body-btn: white;
+  --rating-msg-body-message-data-color: white;
+  --rating-msg-body-rated-text-color: white;
+  --rating-msg-body-stars-color: white;
+  --rating-msg-footer-icon-color: white;
+  --rating-msg-footer-text-color: white;
+  --rating-msg-footer-copy-btn: white;
+  --exit-btn-color: white;
+  --rating-body-msg-edit-header-color: white;
+  --rating-body-msg-edit-form: white;
+  --rating-body-msg-edit-border: white;
+  --rating-msg-alert-description-color: white;
+  --rating-msg-alert-divider: white;
+  --rating-timestamps-wrapper-bg: #2a2a2a;
+  --rating-timestamps-header-color: white;
+  --timestamps-num-text-color: white;
+  --timestamp-table-header-bg: #404040;
+  --timestamp-table-body-bg: #3A3A3A;
+  --timestamp-table-header-text-color: white;
+  --timestamp-table-body-text-color: white;
+  --timestamp-table-copy-btn: white;
+  --timestamp-table-delete-btn: white;
+
+}
+
+.system {
+
+  /* New: */
+
+  --carousel-card-bg: white;
+  --carousel-card-text-color: black;
+  --card-wrapper-bg: white;
+  --more-info-card-text-color: black;
+  --transaction-pop-up-bg: white;
+  --transaction-pop-up-text-color: black;
+  --card-linking-element-text-color: white;
+  --transaction-element-bg: white;
+  --transaction-element-text-color: black;
+  --loan-plan-element-bg: white;
+  --loan-plan-text-color: black;
+  --balances-element-bg: white;
+  --balances-element-text-color: black;
+  --footer-division-line-color: white;
+  --footer-text-color: black;
+  --values-card: white;
+  --values-card-border-color: white;
+  --value-card-text: black;
+  --team-member-card-divider-color: black;
+  --team-member-card-text-color: black;
+  --team-memeber-card-wrapper-bg: white;
+  --team-memeber-card-wrapper-border: black;
+  --team-memeber-card-wrapper-border: white;
+  --contact-us-main-wrapper-bg: white;
+  --rating-form-bg: white;
+  --rating-form-text-color: black;
+  --rating-form-submit-btn-bg: #6366F1;
+  --rating-form-divider-color: black;
+  --rating-form-info-divider-bg: black;
+  --rating-form-info-btn-color: black;
+  --rating-first-name-form-bg: white;
+  --rating-first-name-form-color: black;
+  --first-name-copy-btn-color: black;
+  --first-name-erase-btn-color: black;
+  --rating-last-name-form-bg: white;
+  --rating-last-name-form-color: black;
+  --last-name-copy-btn-color: black;
+  --last-name-erase-btn-color: black;
+  --rating-email-form-bg: white;
+  --rating-email-form-color: black;
+  --email-copy-btn-bg: black;
+  --email-erase-btn-bg: black;
+  --rating-description-form-bg: white;
+  --rating-description-form-color: black;
+  --description-copy-btn-color: black;
+  --description-erase-btn-color: black;
+  --rating-main-wrapper-bg: white;
+  --rating-timestamps-btn: #6366F1;
+  --rating-sub-wrapper-bg: white;
+  --rating-msg-footer-inner-wrapper-border: black;
+  --rating-msg-header-wrapper-border: black;
+  --rating-body-msg-edit-form-bg: white;
+  --rating-body-msg-edit-form-color: black;
+  --rating-body-msg-edit-wrapper-bg: white;
+  --rating-msg-alert-wrapper-bg: white;
+  --page-not-found-wrapper-bg: linear-gradient(to bottom, #E0E7FF, #C7D2FE, #A5B4FC);
+  --page-not-found-inner-wrapper-bg: #FFFFFF;
+  --page-not-found-text-color: linear-gradient(to right, #4F46E5, #4338CA, #3730A3);
+  --page-not-found-btn-bg: #6366F1;
+  --settings-wrapper-bg: white;
+  --settings-options-bg: white;
+  --settings-selected-option-bg: white;
+  --settings-option-text-color: white;
+  --danger-zone-setting-text-color: black;
+  --account-setting-wrapper-bg: white;
+  --account-setting-text-color: black;
+  --account-settings-divider-border: black;
+  --security-settings-text-color: black;
+  --security-settings-wrapper-bg: white;
+  --notification-settings-text-color: black;
+  --main-dashboard-wrapper-bg: #1e3a8a;
+  --main-dashboard-content-wrapper-bg: #f3f4f6;
+  --main-dashboard-text-color: black;
+  --faq-wrapper-bg: white;
+  --faq-text-color: black;
+  --faq-exit-btn-color: black;
+  --empty-loan-history-wrapper-bg: white;
+  --empty-loan-history-text-color: #4B5563;
+  --empty-loan-history-sub-text-color: #6B7280;
+  --loan-totals-element-bg: white;
+  --loan-totals-header-color: #6B7280;
+  --loan-totals-text-color: #4338CA;
+  --loan-element-bg: white;
+  --loan-element-number-color: #374151;
+  --loan-propearty-color: #6B7280;
+  --loan-data-color: #4338CA;
+  --loan-first-form-text-color: black;
+  --loan-form-bg: white;
+  --first-name-label-color: black;
+  --loan-first-name-form-bg: white;
+  --loan-first-name-copy-btn-color: black;
+  --loan-first-name-erase-btn-color: black;
+  --loan-last-name-form-bg: white;
+  --loan-last-name-copy-btn-color: black;
+  --loan-last-name-erase-btn-color: black;
+  --last-name-label-color: black;
+  --job-title-label-color: black;
+  --loan-job-title-form-bg: white;
+  --loan-job-title-copy-btn-color: black;
+  --loan-job-title-erase-btn-color: black;
+  --loan-monthly-income-label-color: black;
+  --loan-monthly-income-form-bg: white;
+  --loan-monthly-income-copy-btn-color: black;
+  --loan-monthly-income-erase-btn-color: black;
+  --loan-first-form-btn-bg: #6366F1;
+  --loan-first-form-divider-color: black;
+  --loan-second-form-text-color: black;
+  --loan-income-currency-form-bg: white;
+  --background-gradient: linear-gradient(to right, #818cf8, #6366f1, #4338ca);
+  --dark-tone-sectin-bg: linear-gradient(to bottom right, #dbeafe, #c7d2fe);
+  --text-color: white;
+  --carousel-arrow-btn: black;
+  --second-section-text: black;
+  --carousel-btn-bg-color: #6366f1;
+  --carousel-btn-text-color: white;
+  --carousel-btn-border: #6a6cf2;
+  --popup-wrapper-bg: white;
+  --popup-header-text-color: white;
+  --popup-divider-color: black;
+  --popup-text-color: black;
+  --popup-card-count-text-color: #6366F1;
+  --transition: 0.3s ease, transform 0.2s ease;
+  --third-section-bg: linear-gradient(to bottom right, #dbeafe, #c7d2fe);
+  --third-section-text: black;
+  --card-wrapper-border: #6a6cf2;
+  --card-icon-color: #6a6cf2;
+  --fourth-section-bg: linear-gradient(to bottom right, #eff6ff, #e0e7ff);
+  --card-linking-title-color: black;
+  --card-linking-description: black;
+  --link-card-btn-bg: #6a6cf2;
+  --link-card-btn-text: white;
+  --fifth-section-bg: linear-gradient(to bottom right, #dbeafe, #c7d2fe);
+  --balances-title-text: black;
+  --balances-description-text: black;
+  --balances-start-btn-bg: #6a6cf2;
+  --sixth-section-bg: linear-gradient(to bottom right, #eff6ff, #e0e7ff);
+  --transaction-title-text: black;
+  --transaction-description: black;
+  --transaction-start-btn-bg: #6a6cf2;
+  --transaction-icon: #6a6cf2;
+  --transaction-inner-icon-color: white;
+  --transaction-start-btn-text: white;
+  --transaction-reminder-section-bg: #e0e7ff;
+  --transaction-reminder-text-color: black;
+  --transaction-reminder-border: #818cf8;
+  --seventh-section-bg: linear-gradient(to bottom right, #dbeafe, #c7d2fe);
+  --loan-plan-title-text: black;
+  --loan-plan-description-text: black;
+  --loan-plan-icon: #6a6cf2;
+  --loan-plan-inner-icon-color: white;
+  --loan-plan-btn-bg: #6a6cf2;
+  --loan-plan-btn-text: white;
+  --footer-section-bg: #4f46e5;
+  --footer-text-color: black;
+  --footer-bottom-line-color: black;
+  --footer-tooltip-text-color: black;
+  --about-main-wrapper-bg: white;
+  --about-text: black;
+  --values-card-btn-bg: #6366F1;
+  --team-header-text: black;
+  --team-header-subtext: black;
+  --division-lines: black;
+  --video-main-wrapper-bg: linear-gradient(to bottom right, #eff6ff, #e0e7ff);
+  --video-header-text: black;
+  --video-description-text: black;
+  --video-link-text: #6366F1;
+  --contact-us-header-text: black;
+  --contact-us-icon-color: black;
+  --contact-us-text-color: black;
+  --contact-us-map-borders: black;
+  --contact-us-division-color: black;
+  --rating-header-text-color: black;
+  --rating-description-text-color: black;
+  --rating-sub-wrapper-bg: white;
+  --rating-text-color: black;
+  --rating-empty-header-color: black;
+  --rating-empty-description-color: black;
+  --rating-total-text-color: black;
+  --rating-msg-wrapper-bg: white;
+  --rating-msg-wrapper-border-color: #e5e7eb;
+  --rating-msg-header-wrapper-bg: #f8fafc;
+  --rating-msg-user-icon-color: #6b7280;
+  --rating-msg-info-color: black;
+  --rating-msg-division-color: black;
+  --rating-msg-copy-btn: black;
+  --rating-msg-delete-btn: black;
+  --rating-msg-body-icon-color: #6b7280;
+  --rating-msg-body-text-color: #6b7280;
+  --rating-msg-body-btn: black;
+  --rating-msg-body-message-data-color: #374151;
+  --rating-msg-body-rated-text-color: black;
+  --rating-msg-body-stars-color: #374151;
+  --rating-msg-footer-wrapper-bg: white;
+  --rating-msg-footer-icon-color: black;
+  --rating-msg-footer-text-color: black;
+  --rating-msg-footer-copy-btn: black;
+  --exit-btn-color: black;
+  --rating-body-msg-edit-header-color: white;
+  --rating-body-msg-edit-form: white;
+  --rating-body-msg-edit-border: black;
+  --rating-msg-header-wrapper-border-color: white;
+  --rating-msg-alert-description-color: black;
+  --rating-msg-alert-divider: black;
+  --rating-timestamps-wrapper-bg: white;
+  --rating-timestamps-header-color: black;
+  --timestamps-num-text-color: black;
+  --timestamp-table-header-bg: #F3F4F6;
+  --timestamp-table-body-bg: #F9FAFB;
+  --timestamp-table-header-text-color: black;
+  --timestamp-table-body-text-color: black;
+  --timestamp-table-copy-btn: black;
+  --timestamp-table-delete-btn: black;
+
+}
+
+/* Applying mode variables globally */
+
+/* Landing page: */
+
+/* Navbar: */
+
+.navbar {
+
+  background: var(--background-gradient);
+
+}
+
+/* First section: */
+
+.hero {
+
+  background: var(--dark-tone-sectin-bg);
+
+}
+
+.hero-text {
+
+  color: var(--hero-text);
+
+}
+
+/* Second section: */
+
+.second-section {
+
+  background: var(--light-tone-section-bg);
+
+}
+
+.second-section-text {
+
+  color: var(--second-section-text);
+
+}
+
+.carousel-btn {
+
+  background: var(--carousel-btn-bg-color);
+  color: var(--carousel-btn-text-color);
+
+}
+
+.carousel-card {
+
+  background: var(--carousel-card-bg);
+  border-color: var(--carousel-btn-border);
+
+}
+
+.carousel-card-text {
+
+  color: var(--carousel-card-text-color);
+
+}
+
+.right-arrow-btn {
+
+  color: var(--carousel-arrow-btn);
+
+}
+
+.left-arrow-btn {
+
+  color: var(--carousel-arrow-btn);
+
+}
+
+.popup-wrapper {
+
+  background: var(--popup-wrapper-bg);
+
+}
+
+.popup-header-text {
+
+  color: var(--popup-header-text-color);
+
+}
+
+.popup-divider {
+
+  color: var(--popup-divider-color);
+
+}
+
+.popup-text {
+
+  color: var(--popup-text-color);	
+
+}
+
+.popup-card-count-text {
+
+  color: var(--popup-card-count-text-color);
+
+}
+
+/* Third section: */
+
+.more-options {
+
+  background: var(--third-section-bg);
+
+}
+
+.more-options-text {
+
+  color: var(--third-section-text);
+
+}
+
+.card-wrapper {
+
+  background: var(--card-wrapper-bg);
+  border-color: var(--card-wrapper-border);
+
+}
+
+.card-icon {
+
+  color: var(--card-icon-color);
+
+}
+
+.more-info-card-text {
+
+  color: var(--more-info-card-text-color);
+
+}
+
+/* Fourth section: */
+
+.card-linking-wrapper {
+
+  background: var(--fourth-section-bg);
+
+}
+
+.card-linking-element {
+
+  background: var(--card-linking-element-bg);
+
+}
+
+.card-linking-element-text {
+
+  color: var(--card-linking-element-text-color);
+
+}
+
+.card-linking-title {
+
+  color: var(--card-linking-title-color);
+
+}
+
+.card-linking-description {
+
+  color: var(--card-linking-description);
+
+}
+
+.link-card-btn {
+
+  background-color: var(--link-card-btn-bg);
+  color: var(--link-card-btn-text);
+
+}
+
+/* Fifth section: */
+
+.balances-section {
+
+  background: var(--fifth-section-bg);
+
+}
+
+.balances-element {
+
+  background: var(--balances-element-bg);
+
+}
+
+.balances-title {
+
+  color: var(--balances-title-text);
+
+}
+
+.balances-description {
+
+  color: var(--balances-description-text);
+
+}
+
+.balances-start-btn {
+
+  background: var(--balances-start-btn-bg);
+
+}
+
+.balances-element-text {
+
+  color: var(--balances-element-text-color);
+
+}
+
+.transaction-pop-up {
+
+  background: var(--transaction-pop-up-bg);
+
+}
+
+.transaction-pop-up-text {
+
+  color: var(--transaction-pop-up-text-color);
+
+}
+
+/* Sixth section: */
+
+.transaction-wrapper {
+
+  background: var(--sixth-section-bg);
+
+}
+
+.transaction-element {
+
+  background: var(--transaction-element-bg);
+
+}
+
+.transaction-element-text {
+
+  color: var(--transaction-element-text-color);
+
+}
+
+.transaction-title {
+
+  color: var(--transaction-title-text);
+
+}
+
+.transaction-description {
+
+  color: var(--transaction-description);
+
+}
+
+.transaction-icon {
+
+  background: var(--transaction-icon);
+
+}
+
+.transaction-inner-icon {
+
+  color: var(--transaction-inner-icon-color);
+
+}
+
+.transaction-reminder-section {
+
+  background: var(--transaction-reminder-section-bg);
+  border-color: var(--transaction-reminder-border);
+
+}
+
+.transaction-reminder-text {
+
+  color: var(--transaction-reminder-text-color);
+
+}
+
+.transaction-start-btn {
+
+  background: var(--transaction-start-btn-bg);
+  color: var(--transaction-start-btn-text);
+
+}
+
+/* Seventh section: */
+
+.loan-plan-section {
+
+  background: var(--seventh-section-bg);
+
+}
+
+.loan-plan-element {
+
+  background: var(--loan-plan-element-bg);
+
+}
+
+.loan-plan-text {
+
+  color: var(--loan-plan-text-color);
+
+}
+
+.loan-plan-title {
+
+  color: var(--loan-plan-title-text);
+
+}
+
+.loan-plan-description {
+
+  color: var(--loan-plan-description-text);
+
+}
+
+.loan-plan-icon {
+
+  background: var(--loan-plan-icon);
+
+}
+
+.loan-plan-inner-icon {
+
+  color: var(--loan-plan-inner-icon-color);
+
+}
+
+.loan-plan-btn {
+
+  background: var(--loan-plan-btn-bg);
+  color: var(--loan-plan-btn-text);
+
+}
+
+/* Footer section: */
+
+.footer-section {
+
+  background: var(--footer-section-bg);
+
+}
+
+.footer-main-text {
+
+  color: var(--footer-text-color);
+
+}
+
+.footer-moto-text {
+
+  color: var(--footer-text-color);
+
+}
+
+.footer-text {
+
+  color: var(--footer-text-color);
+
+}
+
+.footer-social-media {
+
+  color: var(--footer-text-color);
+
+}
+
+.footer-quick-links {
+
+  color: var(--footer-text-color);
+
+}
+
+.footer-quick-links-text {
+
+  color: var(--footer-text-color);
+
+}
+
+.footer-privacy-policy-text {
+
+  color: var(--footer-text-color);
+
+}
+
+.footer-terms-conditions-text {
+
+  color: var(--footer-text-color);
+
+}
+
+.footer-contact-us-text {
+
+  color: var(--footer-text-color);
+
+}
+
+.footer-location-text {
+
+  color: var(--footer-text-color);
+
+}
+
+.footer-email-text {
+
+  color: var(--footer-text-color);
+
+}
+
+.footer-phone-text {
+
+  color: var(--footer-text-color);
+
+}
+
+.footer-bottom-text {
+
+  color: var(--footer-text-color);
+
+}
+
+.footer-tooltip-text {
+
+  color: var(--footer-tooltip-text-color);
+
+}
+
+.footer-bottom-line {
+
+  color: var(--footer-bottom-line-color);
+
+}
+
+.footer-division-line {
+
+  border-color: var(--footer-division-line-color);
+
+}
+
+/* About page: */
+
+.about-main-wrapper {
+
+  background: var(--about-main-wrapper-bg);
+
+}
+
+.about-text {
+
+  color: var(--about-text);
+
+}
+
+.values-card {
+
+  background: var(--values-card);
+  border-color: var(--values-card-border-color);
+
+}
+
+.value-card-text {
+
+  color: var(--value-card-text);
+
+}
+
+.values-card-btn {
+
+  background: var(--values-card-btn-bg);
+  border-color: var(--values-card-btn-border-color);
+
+}
+
+.team-header-text {
+
+  color: var(--team-header-text);
+
+}
+
+.team-header-subtext {
+
+  color: var(--team-header-subtext);
+
+}
+
+.division-lines {
+
+  border-color: var(--division-lines);
+
+}
+
+.team-memeber-card-wrapper {
+
+  background: var(--team-memeber-card-wrapper-bg);
+  border-color: var(--team-memeber-card-wrapper-border);
+
+}
+
+.team-member-card-divider {
+
+  border-color: var(--team-member-card-divider-color);
+
+}
+
+.team-member-card-text {
+
+  color: var(--team-member-card-text-color);
+
+}
+
+/* Video styles: */
+
+.video-main-wrapper {
+
+  background: var(--video-main-wrapper-bg);
+
+}
+
+.video-header-text {
+
+  color: var(--video-header-text);
+
+}
+
+.video-description-text {
+
+  color: var(--video-description-text);
+
+}
+
+.video-link-text {
+
+  color: var(--video-link-text);
+
+}
+
+/* Contact us styles: */
+
+.contact-us-main-wrapper {
+
+  background: var(--contact-us-main-wrapper-bg);
+
+}
+
+.contact-us-header-text {
+
+  color: var(--contact-us-header-text);
+
+}
+
+.contact-us-icon {
+
+  color: var(--contact-us-icon-color);
+
+}
+
+.contact-us-text {
+
+  color: var(--contact-us-text-color);
+
+}
+
+.contact-us-division {
+
+  color: var(--contact-us-division-color);
+
+}
+
+.contact-us-map-borders {
+
+  color: var(--contact-us-map-borders);
+
+}
+
+/* Rating styles: */
+
+.rating-main-wrapper {
+
+  background: var(--rating-main-wrapper-bg);
+
+}
+
+.rating-timestamps-btn {
+
+  background: var(--rating-timestamps-btn);
+
+}
+
+.rating-header-text {
+
+  color: var(--rating-header-text-color);
+
+}
+
+.rating-description-text {
+
+  color: var(--rating-description-text-color);
+
+}
+
+.rating-sub-wrapper {
+
+  background: var(--rating-sub-wrapper-bg);
+
+}
+
+.rating-text {
+
+  color: var(--rating-text-color);
+
+}
+
+.rating-empty-header {
+
+  color: var(--rating-empty-header-color);
+
+}
+
+.rating-empty-description {
+
+  color: var(--rating-empty-description-color);
+
+}
+
+.rating-total-text {
+
+  color: var(--rating-total-text-color);
+
+}
+
+.rating-msg-wrapper {
+
+  background: var(--rating-msg-wrapper-bg);
+  border-color: var(--rating-msg-wrapper-border-color);
+
+}
+
+.rating-msg-header-wrapper {
+
+  background: var(--rating-msg-header-wrapper-bg);
+  border-color: var(--rating-msg-header-wrapper-border);
+
+}
+
+.rating-msg-user-icon {
+
+  color: var(--rating-msg-user-icon-color);
+
+}
+
+.rating-msg-info {
+
+  color: var(--rating-msg-info-color);
+
+}
+
+.rating-msg-division {
+
+  background: var(--rating-msg-division-color);
+
+}
+
+.rating-msg-copy-btn {
+
+  color: var(--rating-msg-copy-btn);
+
+}
+
+.rating-msg-copy-btn:hover {
+
+  color: #6366F1;
+
+}
+
+.rating-msg-delete-btn {
+
+  color: var(--rating-msg-delete-btn);
+
+}
+
+.rating-msg-delete-btn:hover {
+
+  color: #ef4444;
+
+}
+
+.rating-msg-body-icon {
+
+  color: var(--rating-msg-body-icon-color);
+
+}
+
+.rating-msg-body-text {
+
+  color: var(--rating-msg-body-text-color);
+
+}
+
+.rating-msg-body-btn {
+
+  color: var(--rating-msg-body-btn);
+
+}
+
+.rating-msg-body-btn:hover {
+
+  color: #6366F1;
+
+}
+
+.rating-msg-body-message-data {
+
+  color: var(--rating-msg-body-message-data-color);
+
+}
+
+.rating-msg-body-rated-text {
+
+  color: var(--rating-msg-body-rated-text-color);
+
+}
+
+.rating-msg-body-stars-color {
+
+  color: var(--rating-msg-body-stars-color);
+
+}
+
+.rating-msg-footer-wrapper {
+
+  background: var(--rating-msg-footer-wrapper-bg);
+
+}
+
+
+
+.rating-msg-footer-inner-wrapper {
+
+  border-color: var(--rating-msg-footer-inner-wrapper-border);
+
+}
+
+
+
+.rating-msg-footer-icon {
+
+  color: var(--rating-msg-footer-icon-color);
+
+}
+
+.rating-msg-footer-text {
+
+  color: var(--rating-msg-footer-text-color);
+
+}
+
+.rating-msg-footer-copy-btn {
+
+  color: var(--rating-msg-footer-copy-btn);
+
+}
+
+.rating-msg-footer-copy-btn:hover {
+
+  color: #6366F1;
+
+}
+
+.rating-body-msg-edit-wrapper {
+
+  background: var(--rating-body-msg-edit-wrapper-bg);
+  border-color: var(--rating-body-msg-edit-wrapper-border);
+
+}
+
+.exit-btn {
+
+  color: var(--exit-btn-color);
+
+}
+
+.exit-btn:hover {
+
+  color: red;
+
+}
+
+.rating-body-msg-edit-header {
+
+  color: var(--rating-body-msg-edit-header-color);
+
+}
+
+.rating-body-msg-edit-form {
+
+  background: var(--rating-body-msg-edit-form-bg);
+  color: var(--rating-body-msg-edit-form-color);
+
+}
+
+.rating-body-msg-edit-wrapper {
+
+  background: var(--rating-body-msg-edit-wrapper-bg);
+
+}
+
+.rating-body-msg-edit-border {
+
+  color: var(--rating-body-msg-edit-border);
+
+}
+
+.rating-msg-alert-wrapper {
+
+  background: var(--rating-msg-alert-wrapper-bg);
+
+}
+
+.rating-msg-alert-description {
+
+  color: var(--rating-msg-alert-description-color);
+
+}
+
+.rating-msg-alert-divider {
+
+  color: var(--rating-msg-alert-divider);
+
+}
+
+.rating-timestamps-wrapper {
+
+  background: var(--rating-timestamps-wrapper-bg);
+
+}
+
+.rating-timestamps-header {
+
+  color: var(--rating-timestamps-header-color);
+
+}
+
+.first-name-copy-btn {
+
+  color: var(--first-name-copy-btn-color);
+
+}
+
+.first-name-erase-btn {
+
+  color: var(--first-name-erase-btn-color);
+
+}
+
+.first-name-copy-btn:hover {
+
+  color: #6366F1;
+
+}
+
+.first-name-erase-btn:hover {
+
+  color: #EF4444;
+
+}
+
+.rating-last-name-form {
+
+  background: var(--rating-last-name-form-bg);
+  color: var(--rating-last-name-form-color);
+
+}
+
+.last-name-copy-btn {
+
+  color: var(--last-name-copy-btn-color);
+
+}
+
+.last-name-erase-btn {
+
+  color: var(--last-name-erase-btn-color);
+
+}
+
+.last-name-copy-btn:hover {
+
+  color: #6366F1;
+
+}
+
+.last-name-erase-btn:hover {
+
+  color: #EF4444;
+
+}
+
+.rating-email-form {
+
+  background: var(--rating-email-form-bg);
+  color: var(--rating-email-form-color);
+
+}
+
+.email-copy-btn {
+
+  color: var(--email-copy-btn-bg);
+
+}
+
+.email-erase-btn {
+
+  color: var(--email-erase-btn-bg);
+
+}
+
+.email-copy-btn:hover {
+
+  color: #6366F1;
+
+}
+
+.email-erase-btn:hover {
+
+  color: #EF4444;
+
+}
+
+.rating-description-form {
+
+  background: var(--rating-description-form-bg);
+  color: var(--rating-description-form-color);
+
+}
+
+.description-copy-btn {
+
+  color: var(--description-copy-btn-color);
+
+}
+
+.description-erase-btn {
+
+  color: var(--description-erase-btn-color);
+
+}
+
+.description-copy-btn:hover {
+
+  color: #6366F1;
+
+}
+
+.description-erase-btn:hover {
+
+  color: #EF4444;
+
+}
+
+.rating-form {
+
+  background: var(--rating-form-bg);
+
+}
+
+.rating-form-text {
+
+  color: var(--rating-form-text-color);
+
+}
+
+.rating-form-submit-btn {
+
+  background: var(--rating-form-submit-btn-bg);
+
+}
+
+.rating-form-divider {
+
+  border-color: var(--rating-form-divider-color);
+
+}
+
+.rating-form-info-divider {
+
+  background: var(--rating-form-info-divider-bg);
+
+}
+
+.rating-form-info-btn {
+
+  color: var(--rating-form-info-btn-color);
+
+}
+
+.rating-first-name-form {
+
+  background: var(--rating-first-name-form-bg);
+  color: var(--rating-first-name-form-color);
+
+}
+
+.timestamps-num-text {
+
+  color: var(--timestamps-num-text-color);
+
+}
+
+.timestamp-table-header {
+
+  background: var(--timestamp-table-header-bg);
+
+}
+
+.timestamp-table-body {
+
+  background: var(--timestamp-table-body-bg);
+
+}
+
+.timestamp-table-header-text {
+
+  color: var(--timestamp-table-header-text-color);
+
+}
+
+.timestamp-table-body-text {
+
+  color: var(--timestamp-table-body-text-color);
+
+}
+
+.timestamp-table-copy-btn {
+
+  color: var(--timestamp-table-copy-btn);
+
+}
+
+.timestamp-table-copy-btn:hover {
+
+  color: #6366F1;
+
+}
+
+.timestamp-table-delete-btn {
+
+  color: var(--timestamp-table-delete-btn);
+
+}
+
+.timestamp-table-delete-btn:hover {
+
+  color: red;
+
+}
+
+.settings-wrapper {
+
+  background: var(--settings-wrapper-bg);
+
+}
+
+.settings-options {
+
+  background: var(--settings-options-bg);
+
+}
+
+.settings-selected-option {
+
+  background: var(--settings-selected-option-bg);
+
+}
+
+.settings-option-text {
+
+  color: var(--settings-option-text-color);
+
+}
+
+.danger-zone-setting-text {
+
+  color: var(--danger-zone-setting-text-color);
+
+}
+
+.account-setting-wrapper {
+
+  background: var(--account-setting-wrapper-bg);
+
+}
+
+.account-setting-text {
+
+  color: var(--account-setting-text-color);
+
+}
+
+.account-settings-divider {
+
+  border-color: var(--account-settings-divider-border);
+
+}
+
+.security-settings-wrapper {
+
+  background: var(--security-settings-wrapper-bg);
+
+}
+
+.security-settings-text {
+
+  color: var(--security-settings-text-color);
+
+}
+
+.notification-settings-text{
+
+  color: var(--notification-settings-text-color);
+
+}
+
+.main-dashboard-wrapper {
+
+  background: var(--main-dashboard-wrapper-bg);
+
+}
+
+/* Custom banking actions aside blue navbar scrollbar: */
+
+.main-dashboard-wrapper::-webkit-scrollbar {
+
+  width: 9px;
+
+}
+
+.main-dashboard-wrapper::-webkit-scrollbar-track {
+
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+
+}
+
+.main-dashboard-wrapper::-webkit-scrollbar-thumb {
+
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+
+}
+
+.main-dashboard-wrapper::-webkit-scrollbar-thumb:hover {
+ 
+  background: rgba(255, 255, 255, 0.5);
+
+}
+
+.main-dashboard-content-wrapper {
+
+  background: var(--main-dashboard-content-wrapper-bg);
+
+}
+
+.main-dashboard-text {
+
+  color: var(--main-dashboard-text-color);
+
+}
+
+.faq-wrapper {
+
+  background: var(--faq-wrapper-bg);
+
+}
+
+.faq-text {
+
+  color: var(--faq-text-color);
+
+}
+
+.faq-exit-btn {
+
+  color: var(--faq-exit-btn-color);
+
+}
+
+.faq-exit-btn:hover {
+
+  color: #EF4444;
+
+}
+
+.empty-loan-history-wrapper {
+
+  background: var(--empty-loan-history-wrapper-bg);
+
+}
+
+.empty-loan-history-text {
+
+  color: var(--empty-loan-history-text-color);
+
+}
+
+.empty-loan-history-sub-text {
+
+  color: var(--empty-loan-history-sub-text-color);
+
+}
+
+.loan-totals-element {
+
+  background: var(--loan-totals-element-bg);
+
+}
+
+.loan-totals-header {
+
+  color: var(--loan-totals-header-color);
+
+}
+
+.loan-totals-text {
+
+  color: var(--loan-totals-text-color);
+
+}
+
+.loan-element {
+
+  background: var(--loan-element-bg);
+
+}
+
+.loan-element-number {
+
+  color: var(--loan-element-number-color);
+
+}
+
+.loan-propearty {
+
+  color: var(--loan-propearty-color);
+
+}
+
+.loan-data {
+
+  color: var(--loan-data-color);
+
+}
+
+.loan-first-form-text {
+
+  color: var(--loan-first-form-text-color);
+
+}
+
+.loan-form {
+
+  background: var(--loan-form-bg);
+
+}
+
+.first-name-label {
+
+  color: var(--first-name-label-color);
+
+}
+
+.loan-first-name-form {
+
+  background: var(--loan-first-name-form-bg);
+
+}
+
+.loan-first-name-copy-btn {
+
+  color: var(--loan-first-name-copy-btn-color);
+
+}
+
+.loan-first-name-erase-btn {
+
+  color: var(--loan-first-name-erase-btn-color);
+
+}
+
+.loan-last-name-form {
+
+  background: var(--loan-last-name-form-bg);
+
+}
+
+.loan-last-name-copy-btn {
+
+  color: var(--loan-last-name-copy-btn-color);
+
+}
+
+.loan-last-name-erase-btn {
+
+  color: var(--loan-last-name-erase-btn-color);
+
+}
+
+.last-name-label {
+
+  color: var(--last-name-label-color);
+
+}
+
+.job-title-label {
+
+  color: var(--job-title-label-color);
+
+}
+
+.loan-job-title-form {
+
+  background: var(--loan-job-title-form-bg);
+
+}
+
+.loan-job-title-copy-btn {
+
+  color: var(--loan-job-title-copy-btn-color);
+
+}
+
+.loan-job-title-erase-btn {
+
+  color: var(--loan-job-title-erase-btn-color);
+
+}
+
+.loan-monthly-income-label {
+
+  color: var(--loan-monthly-income-label-color);
+
+}
+
+.loan-monthly-income-form {
+
+  background: var(--loan-monthly-income-form-bg);
+
+}
+
+.loan-monthly-income-copy-btn {
+
+  color: var(--loan-monthly-income-copy-btn-color);
+
+}
+
+.loan-monthly-income-erase-btn {
+
+  color: var(--loan-monthly-income-erase-btn-color);
+
+}
+
+.loan-first-form-btn {
+
+  background: var(--loan-first-form-btn-bg);
+
+}
+
+.loan-first-form-divider {
+
+  color: var(--loan-first-form-divider-color);
+
+}
+
+.loan-second-form-text {
+
+  color: var(--loan-second-form-text-color);
+
+}
+
+.loan-income-currency-form {
+
+  background: var(--loan-income-currency-form-bg);
+
+}
+
+
+
+
+
+
+
+
+.page-not-found-wrapper {
+
+  background: var(--page-not-found-wrapper-bg);
+
+}
+
+.page-not-found-inner-wrapper {
+
+  background: var(--page-not-found-inner-wrapper-bg);
+
+}
+
+.page-not-found-text {
+
+  color: var(--page-not-found-text-color);
+
+}
+
+.page-not-found-btn {
+
+  background: var(--page-not-found-btn-bg);
+
+}
+
+/* Inner sections: */
+
+/* General dashboard: */
+
+
+
+/* Generals: */
+
+/* To top button: */
+
+.btn {
+
+  background: var(--background-gradient);
+  color: var(--text-color);
+  border-radius: 50px;
+  transition: var(--transition);
+
+}
