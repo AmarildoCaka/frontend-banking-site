@@ -1,29 +1,19 @@
-import { useConditionalBankStore } from "../../../store/secondBankStore";
+import { useConditionalBankStore } from "../../../store/SecondGroup/secondBankStore";
 
 import CardDetailsComp from "../CardDetails";
 
 const CardLinkingOverlayComp = () => {
-
   const { showCardDetails, selectedCard } = useConditionalBankStore();
 
   return (
-
     <>
-    
       {showCardDetails && selectedCard && (
-    
         <>
-    
-          <CardDetailsComp/>
-        
+          <CardDetailsComp />
         </>
-      
       )}
-    
     </>
-  
   );
-
 };
 
 export default CardLinkingOverlayComp;

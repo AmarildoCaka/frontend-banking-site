@@ -1,6 +1,6 @@
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from "recharts";
 
-import { useConditionalBankStore } from "../../../../../../store/secondBankStore";
+import { useConditionalBankStore } from "../../../../../../store/SecondGroup/secondBankStore";
 
 const PieChartComp = () => {
 
@@ -11,10 +11,10 @@ const PieChartComp = () => {
   const loanAmountData = generalLoanDetails.at(-1)?.loanAmount ?? 0;
 
   const chartData = [
-
+  
     { name: "Principal", value: loanAmountData },
 
-    { name: "Interest", value: interestData },
+    { name: "Interest", value: interestData }
   
   ];
 
@@ -24,18 +24,18 @@ const PieChartComp = () => {
 
     <>
     
-      <section className="place-content-center p-5">
+      <section className="place-content-center p-2">
 
         <div className="h-64">
-                      
+        
           <ResponsiveContainer>
-            
+        
             <PieChart>
-
+        
               <Pie data={chartData} dataKey="value" cx="50%" cy="50%" outerRadius={100} label>
-
-                {chartData.map((entry, index) => (
                 
+                {chartData.map((entry, index) => (
+
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]}/>
                 
                 ))}
@@ -47,17 +47,17 @@ const PieChartComp = () => {
               <Legend/>
 
             </PieChart>
-
+          
           </ResponsiveContainer>
-
+        
         </div>
-
+      
       </section>
-    
+  
     </>
 
   );
 
-}
+};
 
 export default PieChartComp;

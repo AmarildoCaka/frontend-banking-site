@@ -6,7 +6,7 @@ const DepositBottomTextComp = () => {
   
     <>
     
-      <div className="mt-6 bg-gray-50 rounded-lg p-4">
+      <div className="mt-6 bg-gray-50 rounded-md p-4">
 
         <div className="flex place-items-center space-x-3">
 

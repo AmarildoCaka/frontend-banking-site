@@ -1,118 +1,133 @@
-import { FaCreditCard, FaUnlock, FaLock, FaTrashAlt } from "react-icons/fa";
+import { FaUnlock, FaLock, FaTrashAlt } from "react-icons/fa";
 
-import { Card } from '../../../store/functInterfaces';
+import { useBankStore } from "../../../store/FirstGroup/useBankStore";
 
-import { useBankStore } from "../../../store/useBankStore";
+import { useConditionalBankStore } from "../../../store/SecondGroup/secondBankStore";
 
-import { useConditionalBankStore } from "../../../store/secondBankStore";
+import { useThirdBankStore } from "../../../store/ThirdGroup/thirdBankStore";
+
+import { useCardLinkingSystemHook } from "../cardLinkingLogic";
 
 const CardListElementComp = () => {
-
   const { showPopUpMessage } = useBankStore();
 
-  const { cardsHistory, setSelectedCard, setShowCardDetails, setCardsHistory } = useConditionalBankStore();
+  const { cardsHistory, setCardsHistory } = useConditionalBankStore();
 
-  const openCardDetails = (card: Card) => {
-  
-    setSelectedCard(card);
+  const { theme } = useThirdBankStore();
 
-    setShowCardDetails(true);
-  
-  };
+  const { deleteSpecificCardHistoryFunct } = useCardLinkingSystemHook();
 
   const toggleLockCard = (id: number) => {
-  
-    setCardsHistory(cardsHistory.map((card) => 
-      
-      (card.id === id)? { ...card, locked: !card.locked }: card
-  
-    ));
-  
+    setCardsHistory(
+      cardsHistory.map((card) =>
+        card.id === id ? { ...card, locked: !card.locked } : card,
+      ),
+    );
   };
 
-  const handleRemoveCard = (id: number) => {
-    
-    const index = cardsHistory.findIndex((card) => card.id === id);
-  
-    if(index !== -1)
-    {
+  const confirmationBtnFunct = (cardId: number) => {
+    const stored = localStorage.getItem("cardHistoryLinkingSystem");
 
-      setCardsHistory(cardsHistory.filter((card) => card.id !== id));
-  
-      showPopUpMessage(`Card number #${index + 1} deleted successfully`, 'success');
-  
+    if (!stored) {
+      return;
     }
-  
-  };  
+
+    const parsedCards = JSON.parse(stored);
+
+    const updatedCards = parsedCards.filter((card: any) => card.id !== cardId);
+
+    localStorage.setItem(
+      "cardHistoryLinkingSystem",
+      JSON.stringify(updatedCards),
+    );
+
+    deleteSpecificCardHistoryFunct(cardId);
+
+    showPopUpMessage(
+      `History number #${updatedCards + 1} deleted successfully`,
+      "success",
+    );
+  };
 
   return (
-
     <>
-    
       {cardsHistory.map((card, index) => (
-        
-        <li key={card.id} className="flex justify-between items-center bg-gray-100 rounded-lg p-4">
+        <>
+          <li
+            key={card.id}
+            className="card-history-element flex justify-between items-center rounded-md p-5 transform transition duration-300 shadow-md hover:shadow-lg"
+          >
+            <span>
+              <p className="loan-propearty text-xs uppercase tracking-wide mb-1">
+                Card No:
+              </p>
 
-          <span className="font-bold">{index + 1}</span>
+              <span className="font-bold text-md text-indigo-600">
+                {" "}
+                #{index + 1}
+              </span>
+            </span>
 
-          <span className="flex flex-row justify-between place-items-center gap-2 text-gray-700">
-            
-            <FaCreditCard className="text-indigo-400"/>
-            
-            {card.brand} •••• {card.last4} (Exp: {card.expiryData})
-          
-          </span>
+            <span>
+              <p className="loan-propearty text-xs uppercase tracking-wide mb-1">
+                Card number
+              </p>
 
-          <div className="flex flex-row justify-between place-items-center text-center gap-2">
+              <p className="loan-data font-bold text-sm line-clamp-2">
+                {card.brand} •••• {card.last4}
+              </p>
+            </span>
 
-            <div>
-            
-              <button type="button" className='rounded-lg shadow-lg px-3 py-1 text-white font-bold bg-indigo-500 cursor-pointer transform transition duration-300 hover:scale-103 hover:bg-indigo-40' onClick={() => {
-                  
-                openCardDetails(card);
-              
-              }}>View Details</button>
-            
-            </div>
+            <span>
+              <p className="loan-propearty text-xs uppercase tracking-wide mb-1">
+                Expires at
+              </p>
 
-            <div className="border-l border-gray-600 h-5 mx-1"></div>
+              <p className="loan-data font-bold text-sm line-clamp-2">
+                {card.expiryData}
+              </p>
+            </span>
 
-            <div>
-            
-              <button type="button" className={`text-lg cursor-pointer transform transition duration-300 hover:scale-121 ${(card.locked)? 'text-green-500': 'text-red-500'}`} onClick={() => {
-                  
-                toggleLockCard(card.id);
+            <span>
+              <p className="loan-propearty text-xs uppercase tracking-wide mb-1">
+                Created at
+              </p>
 
-              }}>{(card.locked)? <FaUnlock/>: <FaLock/>}</button>
-            
-            </div>
+              <p className="loan-data font-bold text-sm line-clamp-2">
+                {card.createdAt}
+              </p>
+            </span>
 
-            <div className="border-l border-gray-600 h-5 mx-1"></div>
-
-            <div>
-            
-              <button type="button" className="text-red-500 text-lg cursor-pointer transform transition duration-300 hover:scale-121" onClick={() => {
-
-                handleRemoveCard(card.id);
-              
-              }}>
-
-                <FaTrashAlt/>
-
+            <div className="flex flex-row justify-between place-items-center text-center gap-2">
+              <button
+                type="button"
+                className={`text-lg cursor-pointer transform transition duration-300 hover:scale-121 ${card.locked ? "text-green-500" : "text-red-500"}`}
+                onClick={() => {
+                  toggleLockCard(card.id);
+                }}
+              >
+                {card.locked ? <FaUnlock /> : <FaLock />}
               </button>
 
+              <div
+                className={`border-l h-5 mx-1 ${theme === "light" || theme === "system" ? "text-black" : theme === "dark" ? "text-white" : "text-black"}`}
+              ></div>
+
+              <button
+                type="button"
+                className="text-indigo-600 text-lg cursor-pointer transform transition duration-300 hover:scale-121 hover:text-red-500"
+                onClick={() => {
+                  confirmationBtnFunct(card.id);
+                }}
+              >
+                <FaTrashAlt />
+              </button>
             </div>
-
-          </div>
-
-        </li>
-
+          </li>
+        </>
       ))}
-    
     </>
-
   );
-
-}
+};
 
 export default CardListElementComp;

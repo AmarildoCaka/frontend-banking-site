@@ -6,15 +6,15 @@ const AccountSecurityComp = () => {
   
     <>
     
-      <div className="security-settings-wrapper rounded-2xl shadow-lg p-6 flex flex-col justify-between hover:scale-[1.03] transition-transform duration-300">
+      <div className="security-settings-wrapper rounded-md shadow-md p-5 flex flex-col justify-between hover:scale-[1.03] transition-transform duration-300">
       
-        <h3 className="security-settings-text text-lg font-semibold text-gray-800 mb-2 flex items-center gap-2">
+        <h1 className="security-settings-text text-lg font-semibold text-gray-800 mb-5 flex items-center gap-2">
           
           <FaLock className="text-indigo-500" size={20}/> {" "}
           
           Account Security Level
           
-        </h3>
+        </h1>
 
         <p className="security-settings-text text-sm text-gray-600 mb-3">Status: {" "}
           

@@ -1,6 +1,6 @@
 import { FaCalculator, FaChartLine } from "react-icons/fa";
 
-import { useConditionalBankStore } from "../../../../../../store/secondBankStore";
+import { useConditionalBankStore } from "../../../../../../store/SecondGroup/secondBankStore";
 
 import { useMonthlyPaymentFunctHook } from "./incomeAndInterestLogic";
 

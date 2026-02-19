@@ -1,85 +1,62 @@
-import { useBankStore } from '../../store/useBankStore';
+import { useBankStore } from "../../store/FirstGroup/useBankStore";
 
 interface chartDataInterface {
-
-  labels: [string, string, string],
+  labels: [string, string, string];
 
   datasets: [
-
     {
+      label: string;
 
-      label: string,
+      data: [number, number, number];
 
-      data: [number, number, number],
+      backgroundColor: [string, string, string];
 
-      backgroundColor: [string, string, string],
+      borderColor: [string, string, string];
 
-      borderColor: [string, string, string],
-
-      borderWidth: number,
-
+      borderWidth: number;
     },
-
-  ],
-
+  ];
 }
 
 interface chartOptionsInterface {
-
   cutout: string;
 
   plugins: {
-
     legend: {
-
       position: "bottom";
 
       labels: {
-
         padding: number;
 
         usePointStyle: boolean;
-
       };
-
     };
 
     tooltip: {
-
       callbacks: {
-
         label: (context: any) => string;
-
       };
-
     };
-
   };
 
   responsive: boolean;
 
   maintainAspectRatio: boolean;
-
 }
 
 const balancesStateFunct = () => {
-
   return useBankStore.getState().balances;
-
-}
+};
 
 const balancesFunct = balancesStateFunct();
 
 const totalBalance = balancesFunct.USD + balancesFunct.EUR + balancesFunct.GBP;
 
 export const chartData: chartDataInterface = {
-
   labels: ["USD", "EUR", "GBP"],
 
   datasets: [
-
     {
-
       label: "Balance",
 
       data: [balancesFunct.USD, balancesFunct.EUR, balancesFunct.GBP],
@@ -89,40 +66,27 @@ export const chartData: chartDataInterface = {
       borderColor: ["#DAA520", "#4682B4", "#FF8C00"],
 
       borderWidth: 2,
-
     },
-
   ],
-
 };
 
 export const chartOptions: chartOptionsInterface = {
-
   cutout: "60%",
 
   plugins: {
-
     legend: {
-
       position: "bottom",
 
       labels: {
-
         padding: 20,
 
-
         usePointStyle: true,
-
       },
-
     },
 
     tooltip: {
-
       callbacks: {
-
         label: (context) => {
-
           const label = context.label || "";
 
           const value = context.parsed;
@@ -130,23 +94,16 @@ export const chartOptions: chartOptionsInterface = {
           const percentage = ((value / totalBalance) * 100).toFixed(1);
 
           return `${label}: ${value.toLocaleString(undefined, {
-
             minimumFractionDigits: 2,
 
             maximumFractionDigits: 2,
-
           })} (${percentage}%)`;
-
         },
-
       },
-
     },
-
   },
 
   responsive: true,
 
   maintainAspectRatio: false,
-
 };

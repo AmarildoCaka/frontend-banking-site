@@ -8,7 +8,7 @@ const DashboardComp = () => {
 
     <>
     
-      <section className="min-h-screen px-6 py-5 transition-colors duration-300 mb-5">
+      <section className="min-h-screen px-5 py-5 transition-colors duration-300 mb-5">
 
         <LineChartComp/>
 

@@ -6,11 +6,11 @@ const AccountSectionComp = () => {
 
     <>
     
-      <div className="h-[500px]">
+      <section className="h-[500px]">
         
         <GeneralAccountSettingsComp/>
       
-      </div>
+      </section>
     
     </>
 

@@ -6,11 +6,11 @@ const SecuritySectionComp = () => {
   
     <>
     
-      <div className="h-[500px]">
+      <section className="h-[500px]">
 
         <AccountSecurityComp/>
       
-      </div>
+      </section>
     
     </>
 

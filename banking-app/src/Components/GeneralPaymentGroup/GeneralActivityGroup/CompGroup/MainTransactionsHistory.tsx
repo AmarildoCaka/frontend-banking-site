@@ -1,81 +1,83 @@
-import { useBankStore } from "../../../../store/useBankStore";
+import { useEffect } from "react";
 
-import { useConditionalBankStore } from "../../../../store/secondBankStore";
+import { useBankStore } from "../../../../store/FirstGroup/useBankStore";
+
+import { useConditionalBankStore } from "../../../../store/SecondGroup/secondBankStore";
 
 import TransactionInnerHistoryComp from "../../../TransactionsGroup/InnerHistory";
-import TransactionHistoryBtnComp from '../../../TransactionsGroup/TransactionHistoryBtn';
+
+import TransactionHistoryBtnComp from "../../../TransactionsGroup/TransactionHistoryBtn";
+
 import TopAlertComp from "../../../GeneralLogic/TopAlertComp";
 
 const TransactionHistoryComp = () => {
-  
   const { alertVisibility, alertType, alertMessage } = useBankStore();
 
-  const { transactions, activeTab } = useConditionalBankStore();
+  const { transactions, setActiveTab } = useConditionalBankStore();
+
+  useEffect(() => {
+    setActiveTab("transactionsHistory");
+  }, [setActiveTab]);
 
   return (
-
     <>
-    
-      <TopAlertComp alertVisibility={alertVisibility} alertType={alertType} alertMessage={alertMessage}/>
+      #4F46E5
+      <TopAlertComp
+        alertVisibility={alertVisibility}
+        alertType={alertType}
+        alertMessage={alertMessage}
+      />
+      <section className="p-1 mt-18">
+        <h1 className="transactions-text text-2xl font-bold text-left mb-8">
+          Transactions History
+        </h1>
 
-      {(activeTab === "transactionsHistory") && (
+        <div className="transactions-history-wrapper flex flex-col justify-between place-items-center text-center w-full rounded-md shadow-md p-4 sm:p-5 min-h-[430px] max-h-[70vh]">
+          {transactions.length === 0 ? (
+            <>
+              <div className="p-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  className="transactions-history-text w-full h-12 text-center"
+                >
+                  <rect
+                    x="3"
+                    y="5"
+                    width="18"
+                    height="14"
+                    rx="2"
+                    ry="2"
+                    strokeWidth="2"
+                  />
 
-        <>
+                  <line x1="7" y1="9" x2="17" y2="9" strokeWidth="2" />
 
-          <section className="p-1">
+                  <line x1="7" y1="13" x2="17" y2="13" strokeWidth="2" />
+                </svg>
 
-            <h1 className="text-2xl font-bold text-left mb-8">Transactions History</h1>
+                <p className="transactions-history-text text-lg font-medium">
+                  No transactions yet
+                </p>
 
-            <div className="flex flex-col justify-between place-items-center text-center bg-white w-full rounded-xl shadow-2xl p-5 overflow-y-auto h-96">
+                <p className="transactions-history-text text-sm mt-1">
+                  All transactions will appear here
+                </p>
+              </div>
+            </>
+          ) : (
+            <>
+              <TransactionInnerHistoryComp />
+            </>
+          )}
 
-              {(transactions.length === 0)? (
-
-                <>
-                
-                  <div className="p-1">
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-full h-12 text-gray-300 text-center">
-
-                      <rect x="3" y="5" width="18" height="14" rx="2" ry="2" strokeWidth="2"/>
-                    
-                      <line x1="7" y1="9" x2="17" y2="9" strokeWidth="2"/>
-                    
-                      <line x1="7" y1="13" x2="17" y2="13" strokeWidth="2"/>
-                    
-                    </svg>
-
-                    <p className="text-lg font-medium text-gray-600">No transactions yet</p>
-
-                    <p className="text-sm text-gray-500 mt-1">All transactions will appear here</p>
-                  
-                  </div>
-                
-                </>
-              
-              ):(transactions.length > 0)? (
-
-                <>
-                
-                  <TransactionInnerHistoryComp/>
-                
-                </>
-              
-              ): null}
-
-              <TransactionHistoryBtnComp/>
-
-            </div>
-
-          </section>
-        
-        </>
-
-      )}
-    
+          <TransactionHistoryBtnComp />
+        </div>
+      </section>
     </>
-
   );
-  
 };
 
 export default TransactionHistoryComp;

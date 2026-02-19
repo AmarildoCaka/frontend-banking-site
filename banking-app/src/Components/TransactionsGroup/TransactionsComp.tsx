@@ -1,24 +1,22 @@
-import { useBankStore } from "../../store/useBankStore";
+import { useBankStore } from "../../store/FirstGroup/useBankStore";
 
 import OpeningComp from "./OpeningComp";
 import TopAlertComp from "../GeneralLogic/TopAlertComp";
 
 const TransactionSystem = () => {
-
   const { alertVisibility, alertType, alertMessage } = useBankStore();
 
   return (
-
     <>
-    
-      <TopAlertComp alertVisibility={alertVisibility} alertType={alertType} alertMessage={alertMessage}/>
+      <TopAlertComp
+        alertVisibility={alertVisibility}
+        alertType={alertType}
+        alertMessage={alertMessage}
+      />
 
-      <OpeningComp/>
-
+      <OpeningComp />
     </>
-
   );
-
 };
 
 export default TransactionSystem;

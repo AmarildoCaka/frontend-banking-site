@@ -1,113 +1,121 @@
-import { FaCheck, FaEllipsisV } from "react-icons/fa";
+import { useBankStore } from "../../store/FirstGroup/useBankStore";
 
-import { useBankStore } from "../../store/useBankStore";
+import { useConditionalBankStore } from "../../store/SecondGroup/secondBankStore";
 
-import { useConditionalBankStore } from "../../store/secondBankStore";
+import { useThirdBankStore } from "../../store/ThirdGroup/thirdBankStore";
 
-import MoreActionsComp from './TransactionPopUps/MoreActions';
-import TransactionDetailsComp from './TransactionPopUps/TransactionDetails';
 import TopAlertComp from "../GeneralLogic/TopAlertComp";
 
 const TransactionInnerHistoryComp = () => {
+  const { showPopUpMessage, alertMessage, alertVisibility, alertType } =
+    useBankStore();
 
-  const { showPopUpMessage, alertMessage, alertVisibility, alertType } = useBankStore();
+  const { transactions, setTransactions } = useConditionalBankStore();
 
-  const { transactions, setTransactions, transactionDetails, moreActionsState, setMoreActionsState } = useConditionalBankStore();
+  const { theme } = useThirdBankStore();
 
   const deleteSingleTransaction = (id: string) => {
-
     const newTransactions = transactions.filter((t) => t.id !== id);
-    
+
     setTransactions(newTransactions);
-  
+
     showPopUpMessage("Transaction deleted successfully", "success");
-  
   };
 
   return (
-  
     <>
-    
-      <TopAlertComp alertVisibility={alertVisibility} alertType={alertType} alertMessage={alertMessage}/>
+      <TopAlertComp
+        alertVisibility={alertVisibility}
+        alertType={alertType}
+        alertMessage={alertMessage}
+      />
 
-      <section className="p-7">
-
+      <section className="p-5 flex flex-col overflow-y-auto justify-between gap-y-3">
         {transactions.map((tx, index) => (
-
-          <div key={tx.id} className="flex flex-row justify-between place-items-center gap-2 text-center w-[800px] border-b border-gray-200 bg-white text-sm p-2 mb-2">
-
-            <p className="text-black font-bold">#{index + 1}</p>
-
-            <section className="flex flex-col justify-center place-items-center gap-2">
-              
-              <div className="flex flex-row justify-center place-items-center gap-3">
-              
-                <p className="font-semibold text-gray-900">{tx.transactionDescription}</p>
-
-                <span className="text-xs font-semibold bg-green-100 text-green-500 border border-green-500 rounded-full p-1">
-                  
-                  <FaCheck/>
-                
+          <div
+            key={tx.id}
+            className="transactions-history-element flex flex-col gap-6 w-full rounded-md shadow-md max-w-4xl mx-auto p-5 transition transfrm duration-300 hover:scale-101 hover:shadow-lg"
+          >
+            <div
+              className={`w-full flex justify-between items-center border-b pb-3 ${theme === "light" || theme === "system" ? "border-gray-300" : theme === "dark" ? "border-white" : "border-gray-300"}`}
+            >
+              <div className="flex gap-2 items-center shrink-0 w-[70px]">
+                <span className="transactions-history-element-text font-semibold">
+                  No:
                 </span>
-              
+
+                <p className="font-bold text-indigo-600">#{index + 1}</p>
               </div>
 
-              <p className="text-gray-500 text-xs">{tx.date}</p>
-
-            </section>
-
-            <section className="flex flex-row justify-center place-content-center gap-3 text-center p-1">
-              
-              <button type="button" className="text-red-600 font-bold text-sm bg-red-50 hover:bg-red-100 border border-red-200 rounded-lg shadow-2xl cursor-pointer transform transition duration-300 hover:scale-105 px-2 py-1" onClick={() => {
-                  
-                deleteSingleTransaction(tx.id);
-              
-              }}>Delete</button>
-
-              <div className="border-l border-gray-400 h-6"></div>
-
-              <button type="button" className="text-black font-semibold text-lg cursor-pointer transform transition duration-300 hover:scale-105" onClick={() => {
-
-                setMoreActionsState(true);
-              
-              }}>
-
-                <FaEllipsisV/>
-              
+              <button
+                type="button"
+                className="text-red-600 font-bold text-sm bg-red-50 hover:bg-red-100 border border-red-200 rounded-md shadow-md px-3 py-1 whitespace-nowrap cursor-pointer transform transition duration-300 hover:scale-107"
+                onClick={() => {
+                  deleteSingleTransaction(tx.id);
+                }}
+              >
+                Delete
               </button>
-            
-            </section>
+            </div>
 
-            {moreActionsState && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-6 gap-5 text-start">
+              <div className="flex flex-col min-w-0">
+                <span className="transactions-data-label text-xs">From</span>
 
-              <>
+                <p className="transactions-data font-semibold truncate">
+                  {tx.sender} {tx.senderLastName}
+                </p>
+              </div>
 
-                <MoreActionsComp transactionData={tx.id}/>
+              <div className="flex flex-col min-w-0">
+                <span className="transactions-data-label text-xs">To</span>
 
-              </>
+                <p className="transactions-data font-semibold truncate">
+                  {tx.receiver} {tx.receiverLastName}
+                </p>
+              </div>
 
-            )}
+              <div className="flex flex-col min-w-0">
+                <span className="transactions-data-label text-xs">Amount</span>
 
-            {transactionDetails && (
+                <p className="transactions-data font-semibold truncate">
+                  {tx.transactionAmount}
+                </p>
+              </div>
 
-              <>
+              <div className="flex flex-col min-w-0">
+                <span className="transactions-data-label text-xs">
+                  Currency
+                </span>
 
-                <TransactionDetailsComp transactionData={tx}/>
+                <p className="transactions-data font-semibold truncate">
+                  {tx.transactionCurrency}
+                </p>
+              </div>
 
-              </>
+              <div className="flex flex-col min-w-0">
+                <span className="transactions-data-label text-xs">
+                  Description
+                </span>
 
-            )}
-        
+                <p className="transactions-data font-semibold truncate">
+                  {tx.transactionDescription}
+                </p>
+              </div>
+
+              <div className="flex flex-col min-w-0">
+                <span className="transactions-data-label text-xs">Time</span>
+
+                <p className="transactions-data font-semibold whitespace-nowrap overflow-y-auto">
+                  {tx.date}
+                </p>
+              </div>
+            </div>
           </div>
-
         ))}
-
       </section>
-    
     </>
-  
   );
-
-}
+};
 
 export default TransactionInnerHistoryComp;

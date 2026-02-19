@@ -10,7 +10,7 @@ export interface userGrowthDataInterface {
 
   users: number;
 
-}
+};
 
 export interface userActivityDataInterface {
 
@@ -18,21 +18,7 @@ export interface userActivityDataInterface {
 
   value: number;
 
-}
-
-export interface depositHistoryInterface {
-
-  id: string;
-
-  amount: number;
-
-  currency: string;
-
-  timeDisplayState: string | null;
-
-  interest: number;
-
-}
+};
 
 export interface withdrawHistoryInterface {
 
@@ -44,7 +30,7 @@ export interface withdrawHistoryInterface {
 
   timeDisplayState: string | null;
 
-}
+};
 
 export interface dayMonthYearStringInterface {
 
@@ -56,7 +42,7 @@ export interface dayMonthYearStringInterface {
 
   year: string;
 
-}
+};
 
 export interface graphDataInterface {
 
@@ -66,7 +52,7 @@ export interface graphDataInterface {
   
   withdraws: number,
 
-}
+};
 
 export interface Card {
 
@@ -86,7 +72,9 @@ export interface Card {
   
   locked: boolean;
 
-}
+  createdAt: string;
+
+};
 
 export interface mainFunctionalityArrInterface {
 
@@ -108,13 +96,13 @@ export interface mainFunctionalityArrInterface {
 
   balanceActivityFunctKey: () => void;
 
-}
+};
 
 export interface depositHistoryInterface {
 
   id: string;
 
-  amount: number;
+  depositAmount: number;
 
   currency: string;
 
@@ -122,7 +110,7 @@ export interface depositHistoryInterface {
 
   interest: number;
 
-}
+};
 
 export type selectedCardType = null | Card;
 
@@ -146,17 +134,17 @@ export interface Transaction {
 
   transactionDescription?: string;
 
-}
+};
 
 export interface fieldErrorsInterface {
 
   id: boolean;
 
-  sender: boolean;
+  senderFirstName: boolean;
 
   senderLastName: boolean;
 
-  receiver: boolean;
+  receiverFirstName: boolean;
 
   receiverLastName: boolean;
 
@@ -168,7 +156,7 @@ export interface fieldErrorsInterface {
 
   transactionDescription?: boolean;
 
-}
+};
 
 export interface loanUnitInterface {
 
@@ -194,9 +182,9 @@ export interface loanUnitInterface {
 
   secondMonthlyPayment: string;
 
-}
+};
 
-export type activeTabType = "overview" | "piechart" | "apply" | "makeTransaction" | "transactionsHistory" | "createCard" | "cards" | "cardCreationHistory" | "billsOverview" | "billsPayment" | "billCategories";
+export type activeTabType = "balances" | "desposit" | "withdraw" | "overview" | "piechart" | "apply" | "makeTransaction" | "transactionsHistory" | "createCard" | "cards" | "cardCreationHistory" | "billsOverview" | "billsPayment" | "billCategories";
 
 export interface loanProgressBarObjInterface {
 
@@ -204,9 +192,7 @@ export interface loanProgressBarObjInterface {
 
   loanSecondStep: boolean;
 
-}
-
-/* First: */
+};
 
 export interface firstStepFormFieldErrorsInterface {
 
@@ -220,7 +206,7 @@ export interface firstStepFormFieldErrorsInterface {
 
   monthlyIncomeCurrency: boolean;
 
-}
+};
 
 export interface secondStepFormFieldErrorsInterface {
 
@@ -232,7 +218,7 @@ export interface secondStepFormFieldErrorsInterface {
 
   loanCurrency: boolean;
 
-}
+};
 
 export interface generalLoanDetailsInterface {
 
@@ -244,7 +230,7 @@ export interface generalLoanDetailsInterface {
 
   interest: string;
 
-}
+};
 
 export interface opinionMsgListInterface {
 
@@ -260,7 +246,7 @@ export interface opinionMsgListInterface {
 
   rating: number;
 
-}
+};
 
 export interface rateMsgSubmitTimeListInterface {
 
@@ -268,7 +254,7 @@ export interface rateMsgSubmitTimeListInterface {
 
   submitTime: string;
 
-}
+};
 
 export interface starRatingListInterface {
 
@@ -276,7 +262,7 @@ export interface starRatingListInterface {
 
   numberOfStars: number;
 
-}
+};
 
 export type dashboardDataStateType = 'dashboard' | 'card';
 

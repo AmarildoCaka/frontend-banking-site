@@ -1,91 +1,147 @@
-import { FaEllipsisV } from "react-icons/fa";
+import { FaRegCopy } from "react-icons/fa";
 
-import { useConditionalBankStore } from "../../../../../../store/secondBankStore";
+import { useBankStore } from "../../../../../../store/FirstGroup/useBankStore";
 
-import PieChartOverloadComp from '../PieChartOverload/PieChartOverload';
+import { useConditionalBankStore } from "../../../../../../store/SecondGroup/secondBankStore";
 
 const StatisticsHistoryComp = () => {
 
-  const { generalLoanDetails, setPieChartBtnState } = useConditionalBankStore();
+  const { showPopUpMessage } = useBankStore();
+
+  const { generalLoanDetails, setGeneralLoanDetailsFunct } = useConditionalBankStore();
+
+  const deleteSingleStatisticsUnitFunct = (id: string) => {
+
+    const newLoans = generalLoanDetails.filter((t) => t.id !== id);
+
+    setGeneralLoanDetailsFunct(newLoans);
+  
+    showPopUpMessage("Loan deleted successfully", "success");
+  
+  };
+
+  const copyStatisticUnitFunct = async (id: string) => {
+
+    const index = generalLoanDetails.findIndex((t) => t.id === id);
+
+    const findUnit = generalLoanDetails[index];
+
+    if (!findUnit) {
+    
+      showPopUpMessage(`Loan statistic not found`, "error");
+
+      return;
+    
+    }
+
+    const rankedUnit = {
+    
+      ...findUnit,
+
+      number: index + 1,
+    
+    };
+
+    const formattedString = Object.entries(rankedUnit).map(([key, value]) => `${key}: ${value}`).join(", ");
+
+    await navigator.clipboard.writeText(formattedString);
+
+    showPopUpMessage(`Loan statistic copied successfully`, "success");
+  
+  };
 
   return (
   
     <>
-    
-      <section className="flex flex-col justify-center place-items-center mt-15 p-1">
 
-        <div className="flex flex-row justify-between text-center place-content-center w-[700px] gap-2 p-1">
+      <section className="flex justify-center px-5">
 
-          <p className="text-black font-bold p-1">Index</p>
+        <div className="w-full max-w-4xl bg-white rounded-md shadow-md border border-slate-200">
 
-          <div className="border-l border-gray-600 h-6"></div>
+          <div className="overflow-x-auto">
 
-          <p className="text-black font-bold p-1">Description</p>
+            <div className="max-h-[60vh] overflow-y-auto">
 
-          <div className="border-l border-gray-600 h-6"></div>
+              <table className="w-full text-sm">
 
-          <p className="text-black font-bold p-1">Loan Amount</p>
+                <thead className="bg-slate-50 sticky top-0 z-10 border-b border-slate-200">
+                  
+                  <tr>
 
-          <div className="border-l border-gray-600 h-6"></div>
+                    <th className="px-5 py-5 text-black font-bold text-center">Index</th>
 
-          <p className="text-black font-bold p-1">Loan Interest</p>
+                    <th className="px-5 py-5 text-black font-bold text-center">Description</th>
 
-        </div>
+                    <th className="px-5 py-5 text-black font-bold text-center">Loan Amount</th>
 
-        <div className="text-center p-1">
+                    <th className="px-5 py-5 text-black font-bold text-center">Interest</th>
 
-          <hr className="border-t w-[700px] border-gray-600 my-4"/>
+                    <th className="px-5 py-5 text-black font-bold text-center">Copy</th>
 
-        </div>
+                    <th className="px-5 py-5 text-black font-bold text-center">Delete</th>
 
-        <div className="flex flex-col justify-center gap-2 p-1 h-96 overflow-y-auto w-[700px]">
+                  </tr>
 
-          {generalLoanDetails.map((loanItem, index) => (
+                </thead>
 
-            <>
-            
-              <div key={loanItem.id} className="flex flex-row justify-between place-content-center rounded-md shadow-md bg-white p-3">
+                <tbody className="divide-y divide-slate-100">
 
-                <p className="text-black font-bold p-1">#{index + 1}</p>
+                  {generalLoanDetails.map((loanItem, index) => (
 
-                <p className="text-black font-bold p-1">{loanItem.loanForm}</p>
+                    <tr key={loanItem.id} className="hover:bg-slate-50 transition duration-300">
 
-                <p className="text-black font-bold p-1">{loanItem.loanAmount}</p>
+                      <td className="px-5 py-5 font-bold text-indigo-600 text-center">#{index + 1}</td>
 
-                <section className="flex flex-row place-content-center">
+                      <td className="px-5 py-5 font-bold text-indigo-600 text-center">{loanItem.loanForm}</td>
 
-                  <p className="text-black font-bold p-1">{loanItem.interest}</p>
+                      <td className="px-5 py-5 font-bold text-indigo-600 text-center">{loanItem.loanAmount}</td>
 
-                  <hr className="my-2 mx-1 h-5 border border-gray-400"/>
+                      <td className="px-5 py-5 font-bold text-indigo-600 text-center">{loanItem.interest}</td>
 
-                  <button type="button" className="text-black font-bold p-1" onClick={() => {
+                      <td className="px-5 py-5 font-bold text-center">
 
-                    setPieChartBtnState(true);
+                        <button type="button" className="border-1 border-gray-300 bg-gray-200 font-bold rounded-md cursor-pointer transform transition duration-300 hover:scale-107 px-3 py-1 p-1" onClick={() => {
+                          
+                          copyStatisticUnitFunct(loanItem.id);
+                        
+                        }}>
+                          
+                          <FaRegCopy/>
 
-                  }}>
+                        </button>
+                        
+                      </td>
 
-                    <FaEllipsisV/>
+                      <td className="px-5 py-5 font-bold text-black text-center">
 
-                  </button>
+                        <button type="button" className="text-red-600 font-bold text-sm bg-red-50 hover:bg-red-100 border border-red-200 rounded-md px-2 py-1 transition shadow-md transform duartion-300 hover:scale-105 cursor-pointer" onClick={() => {
+                            
+                          deleteSingleStatisticsUnitFunct(loanItem.id);
+                        
+                        }}>Delete</button>
 
-                </section>
+                      </td>
 
-              </div>
-            
-              <PieChartOverloadComp loanItem={loanItem}/>
+                    </tr>
 
-            </>
+                  ))}
 
-          ))}
+                </tbody>
+
+              </table>
+
+            </div>
+
+          </div>
 
         </div>
 
       </section>
-    
+
     </>
-  
+
   );
 
-}
+};
 
 export default StatisticsHistoryComp;

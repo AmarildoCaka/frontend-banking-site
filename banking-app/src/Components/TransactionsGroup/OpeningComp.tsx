@@ -6,7 +6,7 @@ const OpeningComp = () => {
 
   const navigationFunct = () => {
 
-    navigate('/general-banking-actions');
+    navigate('/general-banking-actions/transactions-making');
 
   }
 

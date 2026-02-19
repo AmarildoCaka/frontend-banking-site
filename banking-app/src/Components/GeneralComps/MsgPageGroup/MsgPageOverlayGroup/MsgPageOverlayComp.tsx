@@ -1,29 +1,19 @@
-import { useThirdBankStore } from "../../../../store/thirdBankStore";
+import { useThirdBankStore } from "../../../../store/ThirdGroup/thirdBankStore";
 
 import MoreInfoComp from "./MoreInfoGroup/MoreInfoComp";
 
 const MsgPageOverlayComp = () => {
-
   const { msgPagePopUpUnit } = useThirdBankStore();
 
   return (
-
     <>
-    
       {msgPagePopUpUnit && (
-
         <>
-        
-          <MoreInfoComp/>
-        
+          <MoreInfoComp />
         </>
-      
       )}
-    
     </>
-  
   );
-
 };
 
 export default MsgPageOverlayComp;

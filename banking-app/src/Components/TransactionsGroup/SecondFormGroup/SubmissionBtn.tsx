@@ -1,4 +1,4 @@
-import { useConditionalBankStore } from "../../../store/secondBankStore";
+import { useConditionalBankStore } from "../../../store/SecondGroup/secondBankStore";
 
 import { useHandleTransactionsHook } from "../GeneralLogicComp/generalTransactionLogic";
 

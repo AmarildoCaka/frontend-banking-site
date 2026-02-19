@@ -1,6 +1,6 @@
 import { FaChartLine } from "react-icons/fa";
 
-import { useConditionalBankStore } from "../../../../../../store/secondBankStore";
+import { useConditionalBankStore } from "../../../../../../store/SecondGroup/secondBankStore";
 
 import { useMonthlyPaymentFunctHook } from "./incomeAndInterestLogic";
 
@@ -20,18 +20,22 @@ const AmountRangeComp = () => {
       secondStepFormFieldErrors.loanRangeAmount === true
     ) {
       return (
-        <p className="text-red-500 font-semibold text-md text-center mt-3">
-          Loan amount has to be bigger than 0
-        </p>
+        <>
+          <p className="text-red-500 font-semibold text-md text-center mt-3">
+            Loan amount has to be bigger than 0
+          </p>
+        </>
       );
     } else if (
       loanAmount === 0 &&
       secondStepFormFieldErrors.loanRangeAmount === false
     ) {
       return (
-        <p className="text-green-500 font-semibold text-md text-center mt-3">
-          Maximum borrowable amount is 50,000 (in your chosen currency)
-        </p>
+        <>
+          <p className="text-green-500 font-semibold text-md text-center mt-3">
+            Maximum borrowable amount is 50,000 (in your chosen currency)
+          </p>
+        </>
       );
     } else {
       return null;
@@ -40,14 +44,14 @@ const AmountRangeComp = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-center place-items-center text-center gap-2 mb-3 p-3 bg-gray-50 rounded-xl">
+      <div className="loan-second-application-form-inner-wrapper flex flex-col justify-center place-items-center text-center gap-2 mb-3 p-3 rounded-md">
         <div className="w-full flex flex-row justify-between items-center">
           <div className="text-left flex flex-col p-1">
-            <h3 className="text-lg font-semibold text-gray-700 mb-2">
+            <h3 className="loan-second-application-form-text text-lg font-semibold mb-2">
               Loan Amount
             </h3>
 
-            <p className="text-gray-600 text-sm mb-2 font-bold">
+            <p className="loan-second-application-form-text text-sm mb-2 font-bold">
               Slide to choose your loan amount
             </p>
           </div>
@@ -62,7 +66,7 @@ const AmountRangeComp = () => {
         </div>
 
         <div>
-          <p className="text-gray-600 text-md text-center mb-2">
+          <p className="loan-second-application-form-text text-md text-center mb-2">
             Choose loan amount:
             <span className="text-indigo-500 font-bold text-2xl">
               {" "}
@@ -86,12 +90,9 @@ const AmountRangeComp = () => {
             {[10000, 20000, 35000, 50000].map((amount) => (
               <>
                 <button
+                  type="button"
                   key={amount}
-                  className={`cursor-pointer py-3 rounded-md font-semibold text-sm transition transform duration-300 ${
-                    loanAmount === amount
-                      ? "bg-indigo-600 text-white shadow-lg scale-105"
-                      : "bg-gray-200 text-gray-600 hover:bg-gray-300 hover:scale-105"
-                  }`}
+                  className={`cursor-pointer py-3 rounded-md font-semibold text-sm transition transform duration-300 ${loanAmount === amount ? "bg-indigo-600 text-white shadow-lg scale-105" : "bg-gray-200 text-gray-600 hover:bg-gray-300 hover:scale-105"}`}
                   onClick={(e) => {
                     e.preventDefault();
 

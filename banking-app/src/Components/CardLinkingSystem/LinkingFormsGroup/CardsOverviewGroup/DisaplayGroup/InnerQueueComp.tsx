@@ -1,42 +1,26 @@
-import { useConditionalBankStore } from "../../../../../store/secondBankStore";
+import { useConditionalBankStore } from "../../../../../store/SecondGroup/secondBankStore";
 
-import CardsQueueComp from './CardsQueueComp';
-import CardsListComp from './CardsListComp';
+import CardsQueueComp from "./CardsQueueComp";
+import CardsListComp from "./CardsListComp";
 
 const InnerQueueComp = () => {
-
   const { cardsDisplayState } = useConditionalBankStore();
 
   return (
-
     <>
-    
-      <section className="bg-white rounded-md shadow-md w-[900px] p-5">
-
-        {(cardsDisplayState === true)? (
-
+      <section className="w-full">
+        {cardsDisplayState === true ? (
           <>
-
-            <CardsListComp/>
-
+            <CardsListComp />
           </>
-
-        ):(
-
+        ) : (
           <>
-
-            <CardsQueueComp/>
-
+            <CardsQueueComp />
           </>
-
         )}
-
       </section>
-    
     </>
-
   );
-
-}
+};
 
 export default InnerQueueComp;

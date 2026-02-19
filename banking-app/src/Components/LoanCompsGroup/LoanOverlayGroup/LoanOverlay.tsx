@@ -1,40 +1,19 @@
-import { useConditionalBankStore } from "../../../store/secondBankStore";
+import { useConditionalBankStore } from "../../../store/SecondGroup/secondBankStore";
 
-import ShowFaqPopUpComp from '../LoanPopUpComps/ShowFaq';
-import LoanHistoryComp from '../LoanHistoryGroup/LoanHistory';
+import LoanHistoryComp from "../LoanHistoryGroup/LoanHistory";
 
 const LoanOverlayComp = () => {
-
-  const { showFAQ, loanHistory } = useConditionalBankStore();
+  const { loanHistory } = useConditionalBankStore();
 
   return (
-  
     <>
-
-      {showFAQ && (
-
-        <>
-
-          <ShowFaqPopUpComp/>
-
-        </>
-
-      )}
-
       {loanHistory && (
-
         <>
-
-          <LoanHistoryComp/>
-
+          <LoanHistoryComp />
         </>
-
       )}
-    
     </>
-    
   );
-
-}
+};
 
 export default LoanOverlayComp;

@@ -1,18 +1,41 @@
-import { userGrowthSwitchDataType, userGrowthDataInterface, userActivityDataInterface, depositHistoryInterface, withdrawHistoryInterface, dayMonthYearStringInterface, graphDataInterface, Card, alertType, selectedCardType, fieldErrorsInterface, Transaction, loanUnitInterface, activeTabType, firstStepFormFieldErrorsInterface, generalLoanDetailsInterface, opinionMsgListInterface, starRatingListInterface, rateMsgSubmitTimeListInterface, dashboardDataStateType, loanProgressBarObjInterface, secondStepFormFieldErrorsInterface, billCategoriesListInterface } from './functInterfaces';
+import {
+  userGrowthSwitchDataType,
+  userGrowthDataInterface,
+  userActivityDataInterface,
+  depositHistoryInterface,
+  withdrawHistoryInterface,
+  dayMonthYearStringInterface,
+  graphDataInterface,
+  Card,
+  alertType,
+  selectedCardType,
+  fieldErrorsInterface,
+  Transaction,
+  loanUnitInterface,
+  activeTabType,
+  firstStepFormFieldErrorsInterface,
+  generalLoanDetailsInterface,
+  opinionMsgListInterface,
+  starRatingListInterface,
+  rateMsgSubmitTimeListInterface,
+  dashboardDataStateType,
+  loanProgressBarObjInterface,
+  secondStepFormFieldErrorsInterface,
+  billCategoriesListInterface,
+} from "../functInterfaces";
 
 export type BankState = {
-
   userGrowthSwitch: userGrowthSwitchDataType;
 
   userGrowthData: userGrowthDataInterface[];
-    
+
   userActivityData: userActivityDataInterface[];
 
   amountState: number;
 
   withdrawState: number;
 
-  balances: Record<'USD' | 'EUR' | 'GBP', number>;
+  balances: Record<"USD" | "EUR" | "GBP", number>;
 
   depositHistoryUnitState: depositHistoryInterface[];
 
@@ -32,19 +55,19 @@ export type BankState = {
 
   depostiConfirmationMsg: boolean;
 
-  firstAmountVisibility: boolean,
+  firstAmountVisibility: boolean;
 
-  secondAmountVisibility: boolean,
+  secondAmountVisibility: boolean;
 
-  thirdAmountVisibility: boolean,
+  thirdAmountVisibility: boolean;
 
-  firstBalanceActivityState: 'Enabled' | 'Disabled';
+  firstBalanceActivityState: "Enabled" | "Disabled";
 
-  secondBalanceActivityState: 'Enabled' | 'Disabled';
+  secondBalanceActivityState: "Enabled" | "Disabled";
 
-  thirdBalanceActivityState: 'Enabled' | 'Disabled';
+  thirdBalanceActivityState: "Enabled" | "Disabled";
 
-  generalAccountState: 'Enabled' | 'Disabled';
+  generalAccountState: "Enabled" | "Disabled";
 
   cardslList: Card[];
 
@@ -62,7 +85,7 @@ export type BankState = {
 
   alertVisibility: boolean;
 
-  alertType: '' | alertType;
+  alertType: "" | alertType;
 
   alertMessage: string;
 
@@ -74,7 +97,7 @@ export type BankState = {
 
   setWithdrawState: (value: number) => void;
 
-  deposit: (amount: number, currency: 'USD' | 'EUR' | 'GBP') => void;
+  deposit: (amount: number, currency: "USD" | "EUR" | "GBP") => void;
 
   setDepositHistoryUnit: (value: depositHistoryInterface[]) => void;
 
@@ -91,12 +114,12 @@ export type BankState = {
   copySingleWithdrawUnit: (id: string) => void;
 
   setEmptyWithdrawHistoryUnit: () => void;
-  
-  withdraw: (amount: number, currency: 'USD' | 'EUR' | 'GBP') => void;
+
+  withdraw: (amount: number, currency: "USD" | "EUR" | "GBP") => void;
 
   timeStatementUpdateFunct: () => void;
 
-  resetBalancesToZero: (currency: 'USD' | 'EUR' | 'GBP') => void;
+  resetBalancesToZero: (currency: "USD" | "EUR" | "GBP") => void;
 
   resetAmountToZeroTimeCapture: () => void;
 
@@ -148,7 +171,10 @@ export type BankState = {
 
   setIndex: (value: any) => void;
 
-  showPopUpMessage: (message: string, type: 'success' | 'info' | 'error') => void;
+  showPopUpMessage: (
+    message: string,
+    type: "success" | "info" | "error",
+  ) => void;
 
   hidePopUpMessage: () => void;
 
@@ -157,17 +183,24 @@ export type BankState = {
   setDataToDashboardFunct: () => void;
 
   setDataToCardFunct: () => void;
-
 };
 
-type Currency = 'USD' | 'EUR' | 'GBP';
+type Currency = "USD" | "EUR" | "GBP";
 
-type withdrawCurrency = 'USD' | 'EUR' | 'GBP';
+type withdrawCurrency = "USD" | "EUR" | "GBP";
 
-type billCategoriesType = 'Utilities' | 'Water' | 'Internet' | 'Phone' | 'Rent/Mortgage' | 'Insurance' | 'Credit Card' | 'Subscriptions' | 'Vehicle';
+type billCategoriesType =
+  | "Utilities"
+  | "Water"
+  | "Internet"
+  | "Phone"
+  | "Rent/Mortgage"
+  | "Insurance"
+  | "Credit Card"
+  | "Subscriptions"
+  | "Vehicle";
 
 export interface useConditionalBankStoreInterface {
-
   accountBlockingState: boolean;
 
   confirmDepositState: boolean;
@@ -184,13 +217,15 @@ export interface useConditionalBankStoreInterface {
 
   modalState: boolean;
 
-  errorMessageState: boolean;
+  depositErrorMessageState: boolean;
+
+  withdrawErrorMessageState: boolean;
 
   showCardDetails: boolean;
 
   transactionsConditionalRender: boolean;
 
-  amount: number;
+  depositAmount: number;
 
   withdrawAmount: number;
 
@@ -202,21 +237,21 @@ export interface useConditionalBankStoreInterface {
 
   selectedDepositId: null | number;
 
-  accountPremissionState: 'Freeze' | 'Unfreeze';
+  accountPremissionState: "Freeze" | "Unfreeze";
 
-  waringPopUpState: 'Enable' | 'Disable',
+  waringPopUpState: "Enable" | "Disable";
 
   cards: Card[];
 
   cardsHistory: Card[];
 
-  firstName: string,
+  firstName: string;
 
-  lastName: string,
+  lastName: string;
 
-  cardNumber: string,
+  cardNumber: string;
 
-  expiry: string,
+  expiry: string;
 
   selectedCard: selectedCardType;
 
@@ -228,11 +263,11 @@ export interface useConditionalBankStoreInterface {
 
   secondStepForm: boolean;
 
-  sender: string;
+  senderFirstName: string;
 
   senderLastName: string;
 
-  receiver: string;
+  receiverFirstName: string;
 
   receiverLastName: string;
 
@@ -245,10 +280,6 @@ export interface useConditionalBankStoreInterface {
   fieldErrors: fieldErrorsInterface;
 
   descriptionInformation: boolean;
-
-  moreActionsState: boolean;
-
-  transactionDetails: boolean;
 
   loanConditionalRendering: boolean;
 
@@ -284,13 +315,11 @@ export interface useConditionalBankStoreInterface {
 
   showFAQ: boolean;
 
-  activeTab: activeTabType,
+  activeTab: activeTabType;
 
   firstLoanForm: boolean;
 
   secondLoanForm: boolean;
-
-  /* First: */
 
   firstStepFormFieldErrors: firstStepFormFieldErrorsInterface;
 
@@ -312,6 +341,8 @@ export interface useConditionalBankStoreInterface {
 
   billCategoriesList: billCategoriesListInterface[];
 
+  activeRoute: string;
+
   setAmountErasingHistory: () => void;
 
   setDepositHistoryFunct: () => void;
@@ -324,13 +355,15 @@ export interface useConditionalBankStoreInterface {
 
   setModalState: () => void;
 
-  setErrorMessageState: (value: boolean) => void; 
+  setDepositErrorMessageState: (value: boolean) => void;
+
+  setWithdrawErrorMessageState: (value: boolean) => void;
 
   setShowCardDetails: (value: boolean) => void;
 
   setTransactionsConditionalRender: (value: boolean) => void;
 
-  setAmount: (value: number) => void;
+  setDepositAmount: (value: number) => void;
 
   setWithdrawAmount: (value: number) => void;
 
@@ -378,11 +411,11 @@ export interface useConditionalBankStoreInterface {
 
   setSecondStepForm: (value: boolean) => void;
 
-  setSender: (value: string) => void;
+  setSenderFirstName: (value: string) => void;
 
   setSenderLastName: (value: string) => void;
 
-  setReceiver: (value: string) => void;
+  setReceiverFirstName: (value: string) => void;
 
   setReceiverLastName: (value: string) => void;
 
@@ -397,10 +430,6 @@ export interface useConditionalBankStoreInterface {
   setFalseFieldErrors: () => void;
 
   setDescriptionInformation: (value: boolean) => void;
-
-  setMoreActionsState: (value: boolean) => void;
-
-  setTransactionsDetails: (value: boolean) => void;
 
   setLoanConditionalRendering: (value: boolean) => void;
 
@@ -434,7 +463,10 @@ export interface useConditionalBankStoreInterface {
 
   setLoanSecondStepToTrue: (value: boolean) => void;
 
-  setGeneralLoanProgressBarToFalse: (firstStepValue: boolean, secondStepValue: boolean) => void;
+  setGeneralLoanProgressBarToFalse: (
+    firstStepValue: boolean,
+    secondStepValue: boolean,
+  ) => void;
 
   setShowFAQ: (value: boolean) => void;
 
@@ -464,10 +496,10 @@ export interface useConditionalBankStoreInterface {
 
   setBillsInfoConditional: (value: boolean) => void;
 
+  setActiveRoute: (route: string) => void;
 }
 
 interface teamInformationListInterface {
-
   id: number;
 
   image: string;
@@ -475,11 +507,9 @@ interface teamInformationListInterface {
   name: string;
 
   position: string;
-
 }
 
 interface errorsTypeInterface {
-
   firstName: boolean;
 
   lastName: boolean;
@@ -487,11 +517,9 @@ interface errorsTypeInterface {
   email: boolean;
 
   message: boolean;
-
 }
 
 interface validationObjInterface {
-
   firstName: string;
 
   lastName: string;
@@ -501,11 +529,9 @@ interface validationObjInterface {
   message: string;
 
   rating: number;
-
 }
 
 export interface thirdBankStoreInterface {
-
   isOpen: boolean;
 
   firstModalState: boolean;
@@ -526,7 +552,7 @@ export interface thirdBankStoreInterface {
 
   email: string;
 
-  message: string
+  message: string;
 
   rating: number;
 
@@ -603,7 +629,7 @@ export interface thirdBankStoreInterface {
   setIsSubmitted: (value: boolean) => void;
 
   setRatingInfoUnit: (value: boolean) => void;
-  
+
   setRatingMessageData: (value: rateMsgSubmitTimeListInterface[]) => void;
 
   setGeneratedIdNum: (value: number) => void;
@@ -611,5 +637,4 @@ export interface thirdBankStoreInterface {
   setMsgPagePopUpUnit: (value: boolean) => void;
 
   setTheme: (value: string) => void;
-
 }

@@ -10,19 +10,19 @@ const DepositMainComp = () => {
 
   const handleDepositNavigation = () => {
 
-    navigate('/depositComp');
+    navigate('/general-banking-actions/deposit-transaction');
 
   }
 
   const handleWithdrawNavigation = () => {
 
-    navigate('/withdrawComp');
+    navigate('/general-banking-actions/withdraw-transaction');
 
   }
 
   const handleBalancesNavigation = () => {
 
-    navigate('/viewBalances');
+    navigate('/general-banking-actions/balances-overview');
 
   }
 

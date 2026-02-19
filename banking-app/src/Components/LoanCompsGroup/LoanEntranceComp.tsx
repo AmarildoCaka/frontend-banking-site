@@ -6,7 +6,7 @@ const LoanEntranceComp = () => {
 
   const navigationFunct = () => {
 
-    navigate('/general-banking-actions');
+    navigate('/general-banking-actions/loan-application');
 
   }
 

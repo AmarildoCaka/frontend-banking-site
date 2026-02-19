@@ -38,7 +38,7 @@ const DetailsComp = () => {
 
         </div>
 
-        <div className="contact-us-map-borders w-full h-[333px] border border-2xl rounded-xl mt-8 p-3">
+        <div className="contact-us-map-borders w-full h-[333px] border border-md rounded-xl mt-8 p-3">
 
           <h3 className="contact-us-text text-xl font-bold transform transition duration-300 hover:scale-103 mb-5">Find Us with map</h3>
 

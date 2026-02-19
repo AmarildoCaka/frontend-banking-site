@@ -6,11 +6,11 @@ const DepositTopTextComp = () => {
     
     <>
     
-      <div className="flex items-center justify-between bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-100 border rounded-lg p-4 mb-6">
+      <div className="flex items-center justify-between bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-100 border rounded-md p-5 mb-5">
               
         <div className="flex items-center space-x-3">
       
-          <div className="bg-blue-600 p-2 rounded-lg">
+          <div className="bg-blue-600 p-2 rounded-md">
       
             <FaUniversity className="w-5 h-5 text-white"/>
       
@@ -39,7 +39,7 @@ const DepositTopTextComp = () => {
             <FaLock className="w-4 h-4 mr-1"/>
 
             <span className="font-medium">Secured</span>
-          
+
           </div>
         
         </div>

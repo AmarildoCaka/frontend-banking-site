@@ -1,10 +1,11 @@
-import { useConditionalBankStore } from "../../../store/secondBankStore";
+import { useConditionalBankStore } from "../../../store/SecondGroup/secondBankStore";
 
 import { useInterestFunctHook } from "./LoanForms/TwoStepForms/SecondFormGroup/incomeAndInterestLogic";
 
 export const useDashboardLogicHook = () => {
-  
-  const loanInterestRate = useConditionalBankStore((state) => state.loanInterestRate);
+  const loanInterestRate = useConditionalBankStore(
+    (state) => state.loanInterestRate,
+  );
 
   const loanAmount = useConditionalBankStore((state) => state.loanAmount);
 
@@ -14,20 +15,19 @@ export const useDashboardLogicHook = () => {
 
   const monthlyRate = loanInterestRate / 100 / 12;
 
-  const emi = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, loanTerm)) / (Math.pow(1 + monthlyRate, loanTerm) - 1);
+  const emi =
+    (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, loanTerm)) /
+    (Math.pow(1 + monthlyRate, loanTerm) - 1);
 
   const totalPayable = emi * loanTerm;
 
   const dataObj = {
-
     monthlyRateKey: monthlyRate,
 
     totalPayableKey: totalPayable,
 
     totalInterestKey: interest,
-  
   };
 
   return { dataObj };
-
 };

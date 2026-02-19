@@ -20,8 +20,6 @@ interface Bill {
 
 const BILL_TYPES: BillType[] = ['Electricity', 'Water', 'Internet', 'Phone', 'Rent'];
 
-// Icons per bill type
-
 const BILL_ICONS: Record<BillType, React.ElementType> = {
 
   Electricity: FaBolt,
@@ -39,8 +37,6 @@ const BILL_ICONS: Record<BillType, React.ElementType> = {
 const BillGenerator = () => {
 
   const [bills, setBills] = useState<Bill[]>([]);
-
-  // Generate exactly 5 bills
 
   const generateFiveBills = (): Bill[] => {
 
@@ -66,8 +62,6 @@ const BillGenerator = () => {
 
   };
 
-  // Calculate ms until end of month
-
   const getMsUntilEndOfMonth = (): number => {
 
     const now = new Date();
@@ -80,19 +74,13 @@ const BillGenerator = () => {
 
   useEffect(() => {
 
-    // Immediate generation
-
     setBills(generateFiveBills());
-
-    // Every 5 minutes
     
     const fiveMinInterval = setInterval(() => {
     
       setBills((prev) => [...generateFiveBills(), ...prev]);
     
     }, 5 * 60 * 1000);
-
-    // End of month
 
     const monthlyTimeout = setTimeout(() => {
     

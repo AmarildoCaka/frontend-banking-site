@@ -1,123 +1,127 @@
 import { FaTimes, FaEye, FaEyeSlash } from "react-icons/fa";
 
-import { useConditionalBankStore } from "../../../../../../store/secondBankStore";
+import { useEffect, useState } from "react";
+
+import { useConditionalBankStore } from "../../../../../../store/SecondGroup/secondBankStore";
 
 const CardDetailsComp = () => {
+  const {
+    selectedCardDisplay,
+    setSelectedCardDisplay,
+    cardNumbervisibility,
+    setCardNumberVisibility,
+  } = useConditionalBankStore();
 
-  const { selectedCardDisplay, setSelectedCardDisplay, cardNumbervisibility, setCardNumberVisibility, cardNumber } = useConditionalBankStore();
+  const [storedCardNumber, setStoredCardNumber] = useState<string>("");
+
+  useEffect(() => {
+    if (!selectedCardDisplay?.id) {
+      return;
+    }
+
+    const stored = localStorage.getItem("cardLinkingSystemStorage");
+
+    if (!stored) {
+      return;
+    }
+
+    const parsed = JSON.parse(stored);
+
+    const found = parsed.find((c: any) => c.id === selectedCardDisplay.id);
+
+    if (found) {
+      setStoredCardNumber(found.cardNumberData);
+    }
+  }, [selectedCardDisplay]);
 
   return (
-
     <>
-    
-      <section className="fixed flex flex-col justify-center place-items-center z-50 inset-0 bg-opacity-50 bg-white/5 backdrop-blur-sm">
-        
-        <div className="relative bg-white w-[650px] h-[365px] rounded-xl shadow-xl bg-gradient-to-r from-blue-700 to-indigo-900 text-white p-5 flex flex-col justify-between">
-        
-          <button type="button" className="absolute top-3 right-3 text-white cursor-pointer transform transition duration-300 hover:scale-110 hover:text-red-400" onClick={() => {
-
-            setSelectedCardDisplay(null);
-
-          }}>
-
-            <FaTimes/>
-
+      <section className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm p-3 sm:p-6">
+        <div className=" relative w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl min-h-[320px] rounded-xl shadow-xl bg-gradient-to-r from-blue-700 to-indigo-900 text-white p-4 sm:p-6 md:p-8 flex flex-col gap-4 sm:gap-5">
+          <button
+            type="button"
+            className="absolute top-3 right-3 hover:text-red-400 cursor-pointer transition transform duration-300 hover:scale-110"
+            onClick={() => {
+              setSelectedCardDisplay(null);
+            }}
+          >
+            <FaTimes />
           </button>
 
-          <p className="text-xl font-semibold tracking-wide">Card Details</p>
+          <p className="text-lg sm:text-xl font-semibold tracking-wide">
+            Card Details
+          </p>
 
-          <div className="flex flex-row justify-between tracking-widest font-mono pl-10 pr-10">
-        
-            <div className="flex flex-col justify-evenly">
-            
-              <p className="text-gray-300 tracking-wide">Card Type</p>
+          <div className="flex items-center justify-between gap-4 font-mono">
+            <div>
+              <p className="text-gray-300 text-sm">Card Type</p>
 
-              <p className="uppercase font-bold text-xl">{selectedCardDisplay?.brand}</p>
-            
+              <p className="uppercase font-bold text-lg sm:text-xl">
+                {selectedCardDisplay?.brand}
+              </p>
             </div>
 
-            <div className="text-center p-1">
-
-              <div className="w-20 h-13 text-right bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-sm opacity-80"/>
-
-            </div>
-
+            <div className="w-14 h-9 sm:w-16 sm:h-10 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded opacity-80" />
           </div>
 
-          <div className="flex flex-col justify-center place-items-center mb-5">
+          <div className="flex flex-col items-center gap-3">
+            <p className="text-gray-300 text-sm w-full text-left">
+              {" "}
+              Card Number
+            </p>
 
-            <div className="w-full text-left pl-10 pr-10 p-1">
+            <div className="flex items-center gap-3 text-base sm:text-lg font-mono tracking-widest break-all text-center">
+              <p>
+                {cardNumbervisibility ? storedCardNumber : "•••• •••• ••••"}
+              </p>
 
-              <p className="text-gray-300 tracking-wide">Card Number</p>
+              <div className="w-px h-4 bg-gray-300" />
 
-            </div>
-
-            <div className="flex flex-row justify-center place-items-center gap-3 text-lg tracking-widest font-mono mt-4">
-
-              <p>{(cardNumbervisibility === true)? cardNumber: '•••• •••• ••••'}</p>
-
-              <div className="w-px h-4 bg-gray-300"></div>
-
-              <button type="button" className="transform transition duration-300 hover:scale-115 cursor-pointer" onClick={() => {
-
-                setCardNumberVisibility();
-
-              }}>
-
-                {(cardNumbervisibility === true)? <FaEye/>: <FaEyeSlash/>}
-
+              <button
+                type="button"
+                className="hover:scale-110 transform transition duration-300 cursor-pointer"
+                onClick={() => {
+                  setCardNumberVisibility();
+                }}
+              >
+                {cardNumbervisibility ? <FaEye /> : <FaEyeSlash />}
               </button>
+            </div>
+          </div>
 
+          <div className=" grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+            <div>
+              <p className="text-gray-300 text-sm mb-1">First Name</p>
+
+              <p className="font-semibold break-words">
+                {selectedCardDisplay?.firstNameData}
+              </p>
             </div>
 
+            <div>
+              <p className="text-gray-300 text-sm mb-1">Last Name</p>
+
+              <p className="font-semibold break-words">
+                {selectedCardDisplay?.lastNameData}
+              </p>
+            </div>
+
+            <div>
+              <p className="text-gray-300 text-sm mb-1">Expires</p>
+
+              <p className="font-semibold">{selectedCardDisplay?.expiryData}</p>
+            </div>
           </div>
 
-          <div className="flex justify-evenly">
-        
-            <section className="flex flex-col justify-cenetr place-items-center text-center">
-
-              <div className="flex flex-col text-center p-1">
-
-                <p className="text-gray-300 text-sm mb-2 tracking-wide">First Name</p>
-
-                <p className="text-base leading-relaxed pr-4">{selectedCardDisplay?.firstNameData}</p>
-
-              </div>
-
-            </section>
-
-            <section className="flex flex-col text-center p-1">
-
-              <p className="text-gray-300 text-sm mb-2 tracking-wide">Last Name</p>
-
-              <p className="text-base leading-relaxed pr-4">{selectedCardDisplay?.lastNameData}</p>
-
-            </section>
-
-            <section className="flex flex-col text-center p-1">
-
-              <p className="text-gray-300 text-sm mb-2 tracking-wide">Expires</p>
-          
-              <p className="text-base leading-relaxed pr-4">{selectedCardDisplay?.expiryData}</p>
-
-            </section>
-
+          <div className="text-right mt-2">
+            <p className="text-xs text-gray-300 font-mono break-all">
+              ID: {selectedCardDisplay?.id}
+            </p>
           </div>
-          
-          <div className="w-full text-right mt-2">
-
-            <p className="text-xs text-gray-300 font-mono tracking-wider">ID: {selectedCardDisplay?.id} </p>
-
-          </div>
-
         </div>
-
       </section>
-    
     </>
-
   );
-
-}
+};
 
 export default CardDetailsComp;

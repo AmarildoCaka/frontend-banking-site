@@ -1,56 +1,64 @@
-import { useConditionalBankStore } from '../../../store/secondBankStore';
+import { useConditionalBankStore } from "../../../store/SecondGroup/secondBankStore";
 
-import AccountBlockingState from './AccountBlockingState';
-import DepositBlockConfirm from './DepositBlockConfirm';
-import AmountErasingHistoryComp from './AmountErasingHistoryComp';
-import DepositHistoryComp from './DepositHistoryComp';
-import WithdrawHistoryComp from './WithdrawHistoryComp';
-import DepositDetailsComp from './DepositDetailsComp';
-import WithdrawDetailsComp from './WithdrawDetailsComp';
-import MoreActionsComp from './MoreActionsComp';
+import AccountBlockingState from "./AccountBlockingState";
+import DepositBlockConfirm from "./DepositBlockConfirm";
+import AmountErasingHistoryComp from "./AmountErasingHistoryComp";
+import DepositHistoryComp from "./DepositHistoryComp";
+import WithdrawHistoryComp from "./WithdrawHistoryComp";
+import DepositDetailsComp from "./DepositDetailsComp";
+import WithdrawDetailsComp from "./WithdrawDetailsComp";
+import MoreActionsComp from "./MoreActionsComp";
 
 const GlobalOverlayComp = () => {
+  const accountBlockingStateData = useConditionalBankStore(
+    (state) => state.accountBlockingState,
+  );
 
-  const accountBlockingStateData = useConditionalBankStore((state) => state.accountBlockingState);
+  const confirmDepositStateData = useConditionalBankStore(
+    (state) => state.confirmDepositState,
+  );
 
-  const confirmDepositStateData = useConditionalBankStore((state) => state.confirmDepositState);
+  const amountErasingHistoryStateData = useConditionalBankStore(
+    (state) => state.amountErasingHistoryState,
+  );
 
-  const amountErasingHistoryStateData = useConditionalBankStore((state) => state.amountErasingHistoryState);
+  const depositHistoryStateData = useConditionalBankStore(
+    (state) => state.depositHistoryState,
+  );
 
-  const depositHistoryStateData = useConditionalBankStore((state) => state.depositHistoryState);
+  const withdrawHistoryStateData = useConditionalBankStore(
+    (state) => state.withdrawHistoryState,
+  );
 
-  const withdrawHistoryStateData = useConditionalBankStore((state) => state.withdrawHistoryState);
+  const depositGeneralDetailsStateData = useConditionalBankStore(
+    (state) => state.depositGeneralDetailsState,
+  );
 
-  const depositGeneralDetailsStateData = useConditionalBankStore((state) => state.depositGeneralDetailsState);
-
-  const withdrawGeneralDetailsStateData = useConditionalBankStore((state) => state.withdrawGeneralDetailsState);
+  const withdrawGeneralDetailsStateData = useConditionalBankStore(
+    (state) => state.withdrawGeneralDetailsState,
+  );
 
   const modalStateData = useConditionalBankStore((state) => state.modalState);
 
   return (
-  
     <>
-    
-      {accountBlockingStateData && <AccountBlockingState/>}
+      {accountBlockingStateData && <AccountBlockingState />}
 
-      {confirmDepositStateData && <DepositBlockConfirm/>}
+      {confirmDepositStateData && <DepositBlockConfirm />}
 
-      {amountErasingHistoryStateData && <AmountErasingHistoryComp/>}
+      {amountErasingHistoryStateData && <AmountErasingHistoryComp />}
 
-      {depositHistoryStateData && <DepositHistoryComp/>}
+      {depositHistoryStateData && <DepositHistoryComp />}
 
-      {withdrawHistoryStateData && <WithdrawHistoryComp/>}
+      {withdrawHistoryStateData && <WithdrawHistoryComp />}
 
-      {depositGeneralDetailsStateData && <DepositDetailsComp/>}
+      {depositGeneralDetailsStateData && <DepositDetailsComp />}
 
-      {withdrawGeneralDetailsStateData && <WithdrawDetailsComp/>}
+      {withdrawGeneralDetailsStateData && <WithdrawDetailsComp />}
 
-      {modalStateData && <MoreActionsComp/>}
-    
+      {modalStateData && <MoreActionsComp />}
     </>
-  
   );
-
-}
+};
 
 export default GlobalOverlayComp;

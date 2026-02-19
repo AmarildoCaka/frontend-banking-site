@@ -11,8 +11,6 @@
 
 .light {
 
-  /* New: */
-
   --carousel-card-bg: white;
   --carousel-card-text-color: black;
   --card-wrapper-bg: white;
@@ -75,7 +73,6 @@
   --settings-wrapper-bg: white;
   --settings-options-bg: white;
   --settings-selected-option-bg: white;
-  --settings-option-text-color: black;
   --danger-zone-setting-text-color: black;
   --account-setting-wrapper-bg: white;
   --account-setting-text-color: black;
@@ -118,13 +115,9 @@
   --loan-monthly-income-form-bg: white;
   --loan-monthly-income-copy-btn-color: black;
   --loan-monthly-income-erase-btn-color: black;
-  --loan-first-form-btn-bg: #6366F1;
   --loan-first-form-divider-color: black;
   --loan-second-form-text-color: black;
   --loan-income-currency-form-bg: white;
-
-  /* Old: */
-
   --background-gradient: linear-gradient(to right, #818cf8, #6366f1, #4338ca);
   --dark-tone-sectin-bg: linear-gradient(to bottom right, #dbeafe, #c7d2fe);
   --light-tone-section-bg: linear-gradient(to bottom right, #eff6ff, #e0e7ff);
@@ -230,11 +223,64 @@
   --timestamp-table-copy-btn: black;
   --timestamp-table-delete-btn: black;
 
+  --deposit-form-wrapper-bg: white;
+  --deposit-form-bg: white;
+  --deposit-form-color: black;
+  --deposit-form-label-color: black;
+  --withdraw-form-wrapper-bg: white;
+  --withdraw-form-label-color: black;
+  --withdraw-form-bg: white;
+  --withdraw-form-color: black;
+  --withdraw-form-function-btn-color: black;
+  --deposit-form-function-btn-color: black;
+  --balances-overview-wrapper-bg: white;
+  --balances-overview-btn-wrapper-bg: #C7D2FE;
+  --loan-statistics-text-color: black;
+  --loan-statistic-wrapper-bg: white;
+  --empty-loan-statistics-icon-color: #D1D5DB;
+  --empty-loan-statistics-main-text-color: #4B5563;
+  --empty-loan-statistics-text-color: #6B7280;
+  --loan-second-application-form-text-color: #374151;
+  --loan-second-application-form-inner-wrapper-bg: #F9FAFB;
+  --loan-second-application-form-function-btn-color: black;
+  --loan-second-application-form-bg: #F9FAFB;
+  --loan-second-application-form-color: #374151;
+  --loan-second-applciation-form-dropdown-color: black;
+  --transactions-text-color: black;
+  --transactions-form-wrapper-bg: white;
+  --transaction-text-color: black;
+  --transaction-form-erase-btn-color: black;
+  --transaction-form-bg: white;
+  --transaction-form-color: black;
+  --transaction-form-btn-color: black;
+  --transactions-history-wrapper-bg: white;
+  --transactions-history-text-color: #6B7280;
+  --transactions-history-element-bg: white;
+  --transactions-history-element-text-color: black;
+  --transactions-data-label-color: #6B7280;
+  --transactions-data-color: #4F46E5;
+  --bills-text-color: black;
+  --bill-categories-wrapper-bg: white;
+  --bill-categories-text-color: black;
+  --bill-categores-element-bg: #f8fafc;
+  --bill-categores-element-border: #e2e8f0;
+  --card-linking-text-color: black;
+  --card-linking-action-btn-color: black;
+  --card-linking-form-wrapper-bg: white;
+  --card-linking-form-bg: white;
+  --card-linking-form-placeholder-color: black;
+  --cards-overview-text-color: black;
+  --card-linking-form-color: black;
+  --card-element-bg: white;
+  --cards-empty-history-wrapper-bg: white;
+  --card-history-element-bg: white;
+  --card-warning-wrapper-bg: white;
+  --card-warning-text-color: black;
+  --more-actions-popup-bg: white;
+
 }
 
 .dark {
-
-  /* New: */
 
   --dark-tone-sectin-bg: #0f172a;
   --background-gradient: #1e293b;
@@ -323,7 +369,6 @@
   --settings-wrapper-bg: #0f172a;
   --settings-options-bg: #1e293b;
   --settings-selected-option-bg: #1e293b;
-  --settings-option-text-color: white;
   --danger-zone-setting-text-color: white;
   --account-setting-wrapper-bg: #334155;
   --account-setting-text-color: white;
@@ -365,13 +410,9 @@
   --loan-monthly-income-form-bg: #334155;
   --loan-monthly-income-copy-btn-color: white;
   --loan-monthly-income-erase-btn-color: white;
-  --loan-first-form-btn-bg: #334155;
   --loan-first-form-divider-color: white;
   --loan-second-form-text-color: white;
-  --loan-income-currency-form-bg: #334155;
-
-  /* Old: */
-  
+  --loan-income-currency-form-bg: #334155;  
   --hero-text: white;
   --carousel-arrow-btn: white;
   --second-section-text: white;
@@ -449,12 +490,65 @@
   --timestamp-table-body-text-color: white;
   --timestamp-table-copy-btn: white;
   --timestamp-table-delete-btn: white;
+  
+  --deposit-form-wrapper-bg: #1e293b;
+  --deposit-form-bg: #334155;
+  --deposit-form-color: white;
+  --deposit-form-label-color: white;
+  --withdraw-form-wrapper-bg: #1e293b;
+  --withdraw-form-label-color: white;
+  --withdraw-form-bg: #334155;
+  --withdraw-form-color: white;
+  --withdraw-form-function-btn-color: white;
+  --deposit-form-function-btn-color: white;
+  --balances-overview-wrapper-bg: #1e293b;
+  --balances-overview-btn-wrapper-bg: #334155;
+  --loan-statistics-text-color: white;
+  --loan-statistic-wrapper-bg: #1e293b;
+  --empty-loan-statistics-icon-color: white;
+  --empty-loan-statistics-main-text-color: white;
+  --empty-loan-statistics-text-color: white;
+  --loan-second-application-form-text-color: white;
+  --loan-second-application-form-inner-wrapper-bg: #334155;
+  --loan-second-application-form-function-btn-color: white;
+  --loan-second-application-form-bg: #334155;
+  --loan-second-application-form-color: white;
+  --loan-second-applciation-form-dropdown-color: white;
+  --transactions-text-color: white;
+  --transactions-form-wrapper-bg: #1e293b;
+  --transaction-text-color: white;
+  --transaction-form-erase-btn-color: white;
+  --transaction-form-bg: #334155;
+  --transaction-form-color: white;
+  --transaction-form-btn-color: white;
+  --transactions-history-wrapper-bg: #1e293b;
+  --transactions-history-text-color: white;
+  --transactions-history-element-bg: #334155;
+  --transactions-history-element-text-color: white;
+  --transactions-data-label-color: white;
+  --transactions-data-color: white;
+  --bills-text-color: white;
+  --bill-categories-wrapper-bg: #1e293b;
+  --bill-categories-text-color: white;
+  --bill-categores-element-bg: #334155;
+  --bill-categores-element-border: #334155;
+  --card-linking-text-color: white;
+  --card-linking-action-btn-color: white;
+  --card-linking-form-wrapper-bg: #1e293b;
+  --card-linking-form-bg: #334155;
+  --card-linking-form-placeholder-color: white;
+  --cards-overview-text-color: white;
+  --card-linking-form-color: white;
+  --card-element-bg: #1e293b;
+  --cards-empty-history-wrapper-bg: #1e293b;
+  --card-history-element-bg: #1e293b;
+  --card-warning-wrapper-bg: #1e293b;
+  --card-warning-text-color: white;
+  --more-actions-popup-bg: #1e293b;
 
 }
 
 .system {
-
-  /* New: */
 
   --carousel-card-bg: white;
   --carousel-card-text-color: black;
@@ -518,7 +612,6 @@
   --settings-wrapper-bg: white;
   --settings-options-bg: white;
   --settings-selected-option-bg: white;
-  --settings-option-text-color: white;
   --danger-zone-setting-text-color: black;
   --account-setting-wrapper-bg: white;
   --account-setting-text-color: black;
@@ -560,7 +653,6 @@
   --loan-monthly-income-form-bg: white;
   --loan-monthly-income-copy-btn-color: black;
   --loan-monthly-income-erase-btn-color: black;
-  --loan-first-form-btn-bg: #6366F1;
   --loan-first-form-divider-color: black;
   --loan-second-form-text-color: black;
   --loan-income-currency-form-bg: white;
@@ -668,6 +760,59 @@
   --timestamp-table-body-text-color: black;
   --timestamp-table-copy-btn: black;
   --timestamp-table-delete-btn: black;
+
+  --deposit-form-wrapper-bg: white;
+  --deposit-form-bg: white;
+  --deposit-form-color: black;
+  --deposit-form-label-color: black;
+  --withdraw-form-wrapper-bg: white;
+  --withdraw-form-label-color: white;
+  --withdraw-form-bg: white;
+  --withdraw-form-color: black;
+  --withdraw-form-function-btn-color: black;
+  --deposit-form-function-btn-color: black;
+  --balances-overview-wrapper-bg: white;
+  --balances-overview-btn-wrapper-bg: #C7D2FE;
+  --loan-statistics-text-color: black;
+  --loan-statistic-wrapper-bg: white;
+  --empty-loan-statistics-icon-color: #D1D5DB;
+  --empty-loan-statistics-main-text-color: #4B5563;
+  --empty-loan-statistics-text-color: #6B7280;
+  --loan-second-application-form-text-color: #374151;
+  --loan-second-application-form-inner-wrapper-bg: #F9FAFB;
+  --loan-second-application-form-function-btn-color: black;
+  --loan-second-application-form-bg: #F9FAFB;
+  --loan-second-application-form-color: #374151;
+  --loan-second-applciation-form-dropdown-color: black;
+  --transactions-text-color: black;
+  --transactions-form-wrapper-bg: white;
+  --transaction-text-color: black;
+  --transaction-form-erase-btn-color: black;
+  --transaction-form-bg: white;
+  --transaction-form-color: black;
+  --transaction-form-btn-color: black;
+  --transactions-history-wrapper-bg: white;
+  --transactions-history-text-color: #6B7280;
+  --transactions-history-element-bg: white;
+  --transactions-history-element-text-color: black;
+  --transactions-data-label-color: #6B7280;
+  --transactions-data-color: #4F46E5;
+  --bills-text-color: white;
+  --bill-categories-wrapper-bg: white;
+  --bill-categories-text-color: black;
+  --bill-categores-element-bg: #f8fafc;
+  --bill-categores-element-border: #e2e8f0;
+  --card-linking-text-color: black;
+  --card-linking-action-btn-color: black;
+  --card-linking-form-wrapper-bg: white;
+  --card-linking-form-placeholder-color: black;
+  --cards-overview-text-color: black;
+  --card-linking-form-color: black;
+  --cards-empty-history-wrapper-bg: white;
+  --card-history-element-bg: white;
+  --card-warning-wrapper-bg: white;
+  --card-warning-text-color: black;
+  --more-actions-popup-bg: white
 
 }
 
@@ -1749,12 +1894,6 @@
 
 }
 
-.settings-option-text {
-
-  color: var(--settings-option-text-color);
-
-}
-
 .danger-zone-setting-text {
 
   color: var(--danger-zone-setting-text-color);
@@ -2035,12 +2174,6 @@
 
 }
 
-.loan-first-form-btn {
-
-  background: var(--loan-first-form-btn-bg);
-
-}
-
 .loan-first-form-divider {
 
   color: var(--loan-first-form-divider-color);
@@ -2094,6 +2227,312 @@
 
 /* General dashboard: */
 
+
+.deposit-form-wrapper {
+
+  background: var(--deposit-form-wrapper-bg);
+
+}
+
+.deposit-form {
+
+  background: var(--deposit-form-bg);
+  color: var(--deposit-form-color);
+
+}
+
+.deposit-form-function-btn {
+
+  color: var(--deposit-form-function-btn-color);
+
+}
+
+.deposit-form-label {
+
+  color: var(--deposit-form-label-color);
+
+}
+
+.withdraw-form-wrapper {
+
+  background: var(--withdraw-form-wrapper-bg);
+
+}
+
+.withdraw-form-label {
+
+  color: var(--withdraw-form-label-color);
+
+}
+
+.withdraw-form {
+
+  background: var(--withdraw-form-bg);
+  color: var(--withdraw-form-color);
+
+}
+
+.withdraw-form-function-btn {
+
+  color: var(--withdraw-form-function-btn-color);
+
+}
+
+.balances-overview-wrapper {
+
+  background: var(--balances-overview-wrapper-bg);
+
+}
+
+.balances-overview-btn-wrapper  {
+
+  background: var(--balances-overview-btn-wrapper-bg);
+
+}
+
+.loan-statistic-wrapper {
+
+  background: var(--loan-statistic-wrapper-bg);
+
+}
+
+.loan-statistics-text {
+
+  color: var(--loan-statistics-text-color);
+
+}
+
+.empty-loan-statistics-icon {
+
+  color: var(--empty-loan-statistics-icon-color);
+
+}
+
+.empty-loan-statistics-main-text {
+
+  color: var(--empty-loan-statistics-main-text-color);
+
+}
+
+.empty-loan-statistics-text{
+
+  color: var(--empty-loan-statistics-text-color);
+
+}
+
+.loan-second-application-form-text {
+
+  color: var(--loan-second-application-form-text-color);
+
+}
+
+.loan-second-application-form-inner-wrapper {
+
+  background: var(--loan-second-application-form-inner-wrapper-bg);
+
+}
+
+.loan-second-application-form-function-btn {
+
+  color: var(--loan-second-application-form-function-btn-color);
+
+}
+
+.loan-second-application-form {
+
+  background: var(--loan-second-application-form-bg);
+  color: var(--loan-second-application-form-color);
+
+}
+
+.loan-second-application-form::placeholder {
+
+  color: var(--loan-second-application-form-color);
+
+}
+
+.loan-second-applciation-form-dropdown {
+
+  color: var(--loan-second-applciation-form-dropdown-color);
+
+}
+
+.transactions-text {
+
+  color: var(--transactions-text-color);
+
+}
+
+.transactions-form-wrapper {
+
+  background: var(--transactions-form-wrapper-bg);
+
+}
+
+.transaction-text {
+
+  color: var(--transaction-text-color);
+
+}
+
+.transaction-form-erase-btn {
+
+  color: var(--transaction-form-erase-btn-color);
+
+}
+
+.transaction-form {
+
+  background: var(--transaction-form-bg);
+  color: var(--transaction-form-color);
+
+}
+
+.transaction-form::placeholder {
+
+  color: var(--transaction-form-color);
+
+}
+
+.transaction-form-btn {
+
+  color: var(--transaction-form-btn-color);
+
+}
+
+.transactions-history-wrapper {
+
+  background: var(--transactions-history-wrapper-bg);
+
+}
+
+.transactions-history-text {
+
+  color: var(--transactions-history-text-color);
+
+}
+
+.transactions-history-element {
+
+  background: var(--transactions-history-element-bg);
+
+}
+
+.transactions-history-element-text {
+
+  color: var(--transactions-history-element-text-color);
+
+}
+
+.transactions-data-label {
+
+  color: var(--transactions-data-label-color);
+
+}
+
+.transactions-data {
+
+  color: var(--transactions-data-color);
+
+}
+
+.bills-text {
+
+  color: var(--bills-text-color);
+
+}
+
+.bill-categories-wrapper {
+
+  background: var(--bill-categories-wrapper-bg);
+
+}
+
+.bill-categories-text {
+
+  color: var(--bill-categories-text-color);
+
+}
+
+.bill-categores-element {
+
+  background: var(--bill-categores-element-bg);
+  border-color: var(--bill-categores-element-border);
+
+}
+
+.card-linking-text {
+
+  color: var(--card-linking-text-color);
+
+}
+
+.card-linking-action-btn {
+
+  color: var(--card-linking-action-btn-color);
+
+}
+
+.card-linking-form-wrapper {
+
+  background: var(--card-linking-form-wrapper-bg);
+
+}
+
+.card-linking-form {
+
+  background: var(--card-linking-form-bg);
+  color: var(--card-linking-form-color);
+
+}
+
+.card-linking-form::placeholder {
+
+  color: var(--card-linking-form-placeholder-color);
+
+}
+
+.cards-overview-text {
+
+  color: var(--cards-overview-text-color);
+
+}
+
+.card-element {
+
+  background: var(--card-element-bg);
+
+}
+
+.cards-empty-history-wrapper{
+
+  background: var(--cards-empty-history-wrapper-bg);
+
+}
+
+.card-history-element {
+
+  background: var(--card-history-element-bg);
+
+}
+
+.card-warning-wrapper {
+
+  background: var(--card-warning-wrapper-bg);
+
+}
+
+.card-warning-text {
+
+  color: var(--card-warning-text-color);
+
+}
+
+.more-actions-popup {
+
+  background: var(--more-actions-popup-bg);
+
+}
 
 
 /* Generals: */

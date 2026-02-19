@@ -1,70 +1,66 @@
 import { useEffect } from "react";
 
-import { useBankStore } from "../../../store/useBankStore.ts";
+import { useBankStore } from "../../../store/FirstGroup/useBankStore.ts";
 
-import CardBalancesComp from './CardBalancesComp.tsx';
+import CardBalancesComp from "./CardBalancesComp.tsx";
 import AccountSumComp from "./AccountSumComp.tsx";
 import GlobalOverlayComp from "./GlobalOverlayComp.tsx";
 import TopAlertComp from "../../GeneralLogic/TopAlertComp.tsx";
 
 const AccountBalances = () => {
-
-  const { initializeFirstBalanceState, initializeSecondBalanceState, initializeThirdBalanceState, initializeGeneralAccountState, alertVisibility, alertType, alertMessage } = useBankStore();
+  const {
+    initializeFirstBalanceState,
+    initializeSecondBalanceState,
+    initializeThirdBalanceState,
+    initializeGeneralAccountState,
+    alertVisibility,
+    alertType,
+    alertMessage,
+  } = useBankStore();
 
   useEffect(() => {
-    
-    try
-    {
-    
+    try {
       initializeFirstBalanceState();
 
       initializeSecondBalanceState();
 
       initializeThirdBalanceState();
-    
-    }
-    
-    catch(error)
-    {
-
+    } catch (error) {
       console.error(error);
-    
     }
-  
-  }, [initializeFirstBalanceState, initializeSecondBalanceState, initializeThirdBalanceState]);
+  }, [
+    initializeFirstBalanceState,
+    initializeSecondBalanceState,
+    initializeThirdBalanceState,
+  ]);
 
   useEffect(() => {
-
     initializeGeneralAccountState();
-  
   }, [initializeGeneralAccountState]);
 
   return (
-    
     <>
-
-      <TopAlertComp alertVisibility={alertVisibility} alertType={alertType} alertMessage={alertMessage}/>
+      <TopAlertComp
+        alertVisibility={alertVisibility}
+        alertType={alertType}
+        alertMessage={alertMessage}
+      />
 
       <div className="flex flex-col justify-evenly min-h-screen dark:bg-black py-10 px-4">
+        <CardBalancesComp />
 
-        <CardBalancesComp/>
+        <br />
 
-        <br/>
+        <br />
 
-        <br/>
+        <br />
 
-        <br/>
+        <AccountSumComp />
 
-        <AccountSumComp/>
-
-        <GlobalOverlayComp/>
-
+        <GlobalOverlayComp />
       </div>
-    
     </>
-
   );
-
 };
 
 export default AccountBalances;

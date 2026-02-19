@@ -1,51 +1,34 @@
-import { useThirdBankStore } from "../../../../store/thirdBankStore";
+import { useThirdBankStore } from "../../../../store/ThirdGroup/thirdBankStore";
 
-import FirstOverlayModal from './FirstOverlayModal';
-import SecondOverlayModal from './SecondOverlayModal';
-import ThirdOverlayModal from './ThirdOverlayModal';
+import FirstOverlayModal from "./FirstOverlayModal";
+import SecondOverlayModal from "./SecondOverlayModal";
+import ThirdOverlayModal from "./ThirdOverlayModal";
 
 const AboutOverlayComp = () => {
-
-  const { firstModalState, secondModalState, thirdModalState } = useThirdBankStore();
+  const { firstModalState, secondModalState, thirdModalState } =
+    useThirdBankStore();
 
   return (
-  
     <>
-    
       {firstModalState && (
-
         <>
-        
-          <FirstOverlayModal/>
-        
+          <FirstOverlayModal />
         </>
-
       )}
 
       {secondModalState && (
-
         <>
-        
-          <SecondOverlayModal/>
-        
+          <SecondOverlayModal />
         </>
-
       )}
 
       {thirdModalState && (
-
         <>
-        
-          <ThirdOverlayModal/>
-        
+          <ThirdOverlayModal />
         </>
-
       )}
-    
     </>
-  
   );
-
-}
+};
 
 export default AboutOverlayComp;

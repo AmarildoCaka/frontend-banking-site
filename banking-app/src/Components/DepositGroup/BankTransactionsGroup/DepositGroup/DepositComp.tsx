@@ -1,59 +1,61 @@
 import { useEffect } from "react";
 
-import { useBankStore } from "../../../../store/useBankStore";
+import { useBankStore } from "../../../../store/FirstGroup/useBankStore";
 
-import MainTextComp from './MainTextComp';
-import AmountFormComp from './AmountForm';
-import AmountCurrencyComp from './AmountCurrency';
-import DepositsGlobalOverlayOverlayComp from './DepositsOverlay';
-import DepositBtnComp from './DepositBtn';
-import DepositBottomTextComp from './DepositBottomText';
+import AmountFormComp from "./AmountForm";
+import ErrorMessageOverlayComp from "../WithdrawGroup/ErrorMessageOverlayComp";
+import AmountCurrencyComp from "./AmountCurrency";
+import DepositsGlobalOverlayComp from "./DepositsOverlay";
+import DepositBtnComp from "./DepositBtn";
+import DepositBottomTextComp from "./DepositBottomText";
 import TopAlertComp from "../../../GeneralLogic/TopAlertComp";
+// import ExchangeRateTickerComp from "../../../ExchangeRateGroup/RateCarouselComp";
 
-const MultiCurrencyDeposit = () => {
-
+const DepositComp = () => {
   const { alertVisibility, alertType, alertMessage } = useBankStore();
 
   useEffect(() => {
-  
-    document.body.style.backgroundImage = "linear-gradient(to bottom right, #f8fafc, #e2e8f0)";
+    document.body.style.backgroundImage =
+      "linear-gradient(to bottom right, #f8fafc, #e2e8f0)";
 
     document.body.style.backgroundColor = "";
 
     return () => {
-
       document.body.style.backgroundImage = "";
-    
     };
-  
   }, []);
 
   return (
-    
     <>
-    
-      <TopAlertComp alertVisibility={alertVisibility} alertType={alertType} alertMessage={alertMessage}/>
+      <TopAlertComp
+        alertVisibility={alertVisibility}
+        alertType={alertType}
+        alertMessage={alertMessage}
+      />
 
-      <MainTextComp/>
+      <section className="mt-30">
+        {/* <ExchangeRateTickerComp/> */}
 
-      <div className="max-w-lg mx-auto bg-white rounded-t-xl rounded-xl shadow-sm dark:bg-gray-800 dark:text-white m-5 px-6 py-4">
-        
-        <AmountFormComp/>
+        <h1 className="main-dashboard-text text-2xl font-bold mb-7">
+          Account Deposits
+        </h1>
 
-        <AmountCurrencyComp/>
+        <div className="deposit-form-wrapper max-w-lg mx-auto rounded-md shadow-sm m-5 px-5 py-5 h-100 overflow-y-auto">
+          <AmountFormComp />
 
-        <DepositsGlobalOverlayOverlayComp/>
+          <ErrorMessageOverlayComp />
 
-        <DepositBtnComp/>
+          <AmountCurrencyComp />
 
-        <DepositBottomTextComp/>
-      
-      </div>
-    
+          <DepositsGlobalOverlayComp />
+
+          <DepositBtnComp />
+
+          <DepositBottomTextComp />
+        </div>
+      </section>
     </>
-  
   );
-
 };
 
-export default MultiCurrencyDeposit;
+export default DepositComp;

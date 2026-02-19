@@ -1,40 +1,29 @@
-import { useConditionalBankStore } from '../../../../../../store/secondBankStore';
+import { Card } from "../../../../../../store/functInterfaces";
 
-import CardErasingWarningComp from '../QueueOverviewGroup/CardErasingWarning';
-import CardDetailsComp from './CardDetails';
+import { useConditionalBankStore } from "../../../../../../store/SecondGroup/secondBankStore";
 
-const QueueOverviewComp = () => {
+import CardErasingWarningComp from "../QueueOverviewGroup/CardErasingWarning";
+import CardDetailsComp from "./CardDetails";
 
-  const { selectedCardDisplay, singleCardErasingState } = useConditionalBankStore();
+const QueueOverviewComp = ({ cardElement }: { cardElement?: Card }) => {
+  const { selectedCardDisplay, singleCardErasingState } =
+    useConditionalBankStore();
 
   return (
-
     <>
-    
       {selectedCardDisplay && (
-
         <>
-        
-          <CardDetailsComp/>
-        
+          <CardDetailsComp />
         </>
-
       )}
-    
+
       {singleCardErasingState && (
-
         <>
-        
-          <CardErasingWarningComp/>
-
+          <CardErasingWarningComp cardData={cardElement} />
         </>
-
       )}
-
     </>
-
   );
-
-}
+};
 
 export default QueueOverviewComp;

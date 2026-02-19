@@ -1,29 +1,21 @@
-import { useConditionalBankStore } from '../../../../store/secondBankStore';
+import { useConditionalBankStore } from "../../../../store/SecondGroup/secondBankStore";
 
-import InterestComp from './InterestComp';
+import InterestComp from "./InterestComp";
 
-const DepositsGlobalOverlayOverlayComp = () => {
-
-  const finalSubmissionStateData = useConditionalBankStore((state) => state.finalSubmissionState);
-
-  return (
-
-    <>
-    
-      {finalSubmissionStateData && (
-
-        <>
-        
-          <InterestComp/>
-        
-        </>
-
-      )}
-    
-    </>
-
+const DepositsGlobalOverlayComp = () => {
+  const finalSubmissionStateData = useConditionalBankStore(
+    (state) => state.finalSubmissionState,
   );
 
-}
+  return (
+    <>
+      {finalSubmissionStateData && (
+        <>
+          <InterestComp />
+        </>
+      )}
+    </>
+  );
+};
 
-export default DepositsGlobalOverlayOverlayComp;
+export default DepositsGlobalOverlayComp;

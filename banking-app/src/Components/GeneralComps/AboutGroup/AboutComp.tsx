@@ -1,25 +1,28 @@
+import { useThirdBankStore } from '../../../store/ThirdGroup/thirdBankStore';
+
 import CoreValuesComp from './CoreValuesComp';
-import TeamInformationComp from './TeamInformationComp';
 
 const AboutComp = () => {
 
+  const { teamInformationList } = useThirdBankStore();
+  
   return (
    
     <>
     
-      <main className='about-main-wrapper flex flex-col justify-center place-items-center text-center p-20 pt-20 pb-7'>
+      <main className='about-main-wrapper min-h-screen p-5 pt-25'>
 
-        <div className="flex flex-col justify-center place-items-center text-center max-w-7xl mx-auto px-4 py-16">
+        <section className="flex flex-col p-1">
 
-          <section className="text-center mb-12">
+          <h1 className="about-text text-3xl font-bold">About Us</h1>
 
-            <h1 className="about-text font-extrabold text-4xl text-gray-900 dark:text-white">About Us</h1>
+          <p className="about-text font-semibold mt-1">Discover what World Bank is, our mission, and how we serve our customers.</p>
 
-            <p className="about-text text-black text-lg font-semibold dark:text-white mt-4">Discover what World Bank is, our mission, and how we serve our customers.</p>
+        </section>
 
-          </section>
+        <section className='flex flex-col justify-center place-items-center text-center pb-5 max-w-7xl mx-auto px-5 py-15'>
 
-          <section className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-16">
+          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-16">
 
             <div className='text-center p-1'>
             
@@ -50,26 +53,61 @@ const AboutComp = () => {
             
             </div>
 
-          </section>
-
-          <div className='flex flex-col justify-center place-items-center text-center'>
-
-            <hr className="division-lines w-[800px] border mt-20 mb-10"/>
-
           </div>
+
+          <hr className="division-lines w-full border my-10"/>
 
           <CoreValuesComp/>
 
-          <div className='flex flex-col justify-center place-items-center text-center'>
+          <hr className="division-lines w-full border my-10"/>
 
-            <hr className="division-lines w-[800px] border mt-20 mb-10"/>
+          <div>
+
+            <h1 className="team-header-text text-3xl font-bold text-gray-800 dark:text-white">Meet Our Team</h1>
+
+            <p className="team-header-subtext text-gray-600 text-xl font-semibold text-center dark:text-white mt-5 mb-10">
+              
+              Our dedicated team is committed to providing the best banking
+              experience. <br /> Meet the professionals behind .
+            
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-4 text-center gap-10 place-items-center justify-center">
+            
+              {teamInformationList.map((index) => (
+                
+                <>
+                
+                  <div key={index.id} className="team-memeber-card-wrapper flex flex-col items-center text-center gap-4 w-[260px] bg-white dark:bg-gray-900 rounded-md shadow-md border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-xl p-6">
+                
+                    <div className="w-[100px] h-[100px] sm:w-[120px] sm:h-[120px]">
+                      
+                      <img className="mx-auto w-full h-full object-cover rounded-full shadow-md hover:scale-105 transition-transform duration-300" src={index.image} alt={index.name}/>
+                    
+                    </div>
+
+                    <hr className="team-member-card-divider w-[70%] border" />
+
+                    <div className="flex flex-col items-center gap-1">
+                    
+                      <h3 className="team-member-card-text font-semibold text-lg sm:text-xl">{index.name}</h3>
+
+                      <p className="team-member-card-text text-xs sm:text-sm tracking-wide uppercase">{index.position}</p>
+
+                    </div>
+
+                  </div>
+
+                </>
+
+              ))}
+
+            </div>
 
           </div>
+            
+        </section>
 
-          <TeamInformationComp/>
-          
-        </div>
-        
       </main>
     
     </>
