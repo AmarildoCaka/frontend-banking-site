@@ -9,7 +9,7 @@ import DepositsGlobalOverlayComp from "./DepositsOverlay";
 import DepositBtnComp from "./DepositBtn";
 import DepositBottomTextComp from "./DepositBottomText";
 import TopAlertComp from "../../../GeneralLogic/TopAlertComp";
-// import ExchangeRateTickerComp from "../../../ExchangeRateGroup/RateCarouselComp";
+import ExchangeRateTickerComp from "../../../ExchangeRateGroup/RateCarouselComp";
 
 const DepositComp = () => {
   const { alertVisibility, alertType, alertMessage } = useBankStore();
@@ -34,7 +34,8 @@ const DepositComp = () => {
       />
 
       <section className="mt-30">
-        {/* <ExchangeRateTickerComp/> */}
+
+        <ExchangeRateTickerComp/>
 
         <h1 className="main-dashboard-text text-2xl font-bold mb-7">
           Account Deposits
