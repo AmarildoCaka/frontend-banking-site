@@ -20,7 +20,7 @@ const NavBarComp = () => {
             >
               <img
                 className="w-12 md:w-16 rounded-md shadow-md"
-                src="../../../public/images/logo.jpg"
+                src="/images/logo.jpg"
                 alt="Logo"
               />
             </Link>

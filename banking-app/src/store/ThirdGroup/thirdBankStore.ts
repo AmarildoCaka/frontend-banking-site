@@ -18,7 +18,7 @@ export const useThirdBankStore = create<thirdBankStoreInterface>((set) => {
       {
         id: 0,
 
-        image: "../../public/images/team-img/john-doe-img.jpg",
+        image: "/images/team-img/john-doe-img.jpg",
 
         name: "John Doe",
 
@@ -28,7 +28,7 @@ export const useThirdBankStore = create<thirdBankStoreInterface>((set) => {
       {
         id: 1,
 
-        image: "../../public/images/team-img/jane-smith-img.jpg",
+        image: "/images/team-img/jane-smith-img.jpg",
 
         name: "Jane Smith",
 
@@ -38,7 +38,7 @@ export const useThirdBankStore = create<thirdBankStoreInterface>((set) => {
       {
         id: 2,
 
-        image: "../../public/images/team-img/emily-johnson-img.jpg",
+        image: "/images/team-img/emily-johnson-img.jpg",
 
         name: "Emily Johnson",
 
@@ -48,7 +48,7 @@ export const useThirdBankStore = create<thirdBankStoreInterface>((set) => {
       {
         id: 3,
 
-        image: "../../public/images/team-img/michael-carter-img.jpeg",
+        image: "/images/team-img/michael-carter-img.jpeg",
 
         name: "Michael Carter",
 
