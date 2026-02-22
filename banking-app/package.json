@@ -12,7 +12,7 @@
 
     "dev": "vite",
 
-    "build": "npx vite build"
+    "build": "npx vite build",
     
     "lint": "eslint .",
 
