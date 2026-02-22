@@ -21,7 +21,7 @@ const FooterComp = () => {
               <div className="flex flex-row items-center lg:items-start gap-3">
                 <img
                   className="w-16 h-16 rounded-md transform transition duration-300 hover:scale-105 shadow-lg"
-                  src="../../../public/images/logo.jpg"
+                  src="/images/logo.jpg"
                   alt="World Bank Logo"
                 />
 
@@ -50,7 +50,7 @@ const FooterComp = () => {
                   <li key={i} className="w-full text-center lg:text-left">
                     <a
                       href="/"
-                      className="font-medium font-semibold hover:opacity-80 transition cursor-pointer"
+                      className="font-medium text-semibold hover:opacity-80 transition cursor-pointer"
                     >
                       {link}
                     </a>
