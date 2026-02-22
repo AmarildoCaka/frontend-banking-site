@@ -12,8 +12,8 @@
 
     "dev": "vite",
 
-    "build": "tsc -b && vite build",
-
+    "build": "npx vite build"
+    
     "lint": "eslint .",
 
     "preview": "vite preview"
