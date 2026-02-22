@@ -9,14 +9,14 @@
   "type": "module",
 
   "scripts": {
-  
+
     "dev": "vite",
-  
-    "build": "npx vite build",
-  
-    "preview": "vite preview",
-  
-    "lint": "eslint ."
+
+    "build": "tsc -b && vite build",
+
+    "lint": "eslint .",
+
+    "preview": "vite preview"
 
   },
 
