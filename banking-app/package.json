@@ -9,16 +9,16 @@
   "type": "module",
 
   "scripts": {
-
+  
     "dev": "vite",
-
+    
     "build": "npx vite build",
     
     "lint": "eslint .",
-
+    
     "preview": "vite preview"
-
-  },
+  
+  }
 
   "dependencies": {
 
